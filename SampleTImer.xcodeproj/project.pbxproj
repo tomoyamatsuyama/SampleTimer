@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6456E78A1F9DB1C00079A06C /* TimeTable.json in Resources */ = {isa = PBXBuildFile; fileRef = 6456E7891F9DB1C00079A06C /* TimeTable.json */; };
+		645FB47C1F9D8FFB00D24854 /* TimeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645FB47B1F9D8FFB00D24854 /* TimeTable.swift */; };
 		6485A1391F9CA61C00E520C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6485A1381F9CA61C00E520C6 /* AppDelegate.swift */; };
 		6485A13B1F9CA61C00E520C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6485A13A1F9CA61C00E520C6 /* ViewController.swift */; };
 		6485A13E1F9CA61C00E520C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6485A13C1F9CA61C00E520C6 /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6456E7891F9DB1C00079A06C /* TimeTable.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TimeTable.json; sourceTree = "<group>"; };
+		645FB47B1F9D8FFB00D24854 /* TimeTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTable.swift; sourceTree = "<group>"; };
 		6485A1351F9CA61C00E520C6 /* SampleTImer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleTImer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6485A1381F9CA61C00E520C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6485A13A1F9CA61C00E520C6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,8 +101,10 @@
 		6485A1371F9CA61C00E520C6 /* SampleTImer */ = {
 			isa = PBXGroup;
 			children = (
+				6456E7891F9DB1C00079A06C /* TimeTable.json */,
 				6485A1381F9CA61C00E520C6 /* AppDelegate.swift */,
 				6485A13A1F9CA61C00E520C6 /* ViewController.swift */,
+				645FB47B1F9D8FFB00D24854 /* TimeTable.swift */,
 				6485A13C1F9CA61C00E520C6 /* Main.storyboard */,
 				6485A13F1F9CA61C00E520C6 /* Assets.xcassets */,
 				6485A1411F9CA61C00E520C6 /* LaunchScreen.storyboard */,
@@ -235,6 +241,7 @@
 				6485A1431F9CA61C00E520C6 /* LaunchScreen.storyboard in Resources */,
 				6485A1401F9CA61C00E520C6 /* Assets.xcassets in Resources */,
 				6485A13E1F9CA61C00E520C6 /* Main.storyboard in Resources */,
+				6456E78A1F9DB1C00079A06C /* TimeTable.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6485A13B1F9CA61C00E520C6 /* ViewController.swift in Sources */,
+				645FB47C1F9D8FFB00D24854 /* TimeTable.swift in Sources */,
 				6485A1391F9CA61C00E520C6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
