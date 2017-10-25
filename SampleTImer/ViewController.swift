@@ -20,8 +20,9 @@ class ViewController: UIViewController {
         let minute = calendar.component(.minute, from: date)
         let second = calendar.component(.second, from: date)
         
-        var printMinute = GetTimeTable.get_time(hour: hour, minute: minute)
-        print(printMinute)
+        var kamigamoView = KamigamoViewController()
+        kamigamoView.kamigamoFunc()
+        self.view.addSubview(kamigamoView)
         
         
     }
