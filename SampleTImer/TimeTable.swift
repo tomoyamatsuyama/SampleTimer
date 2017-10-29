@@ -12,12 +12,24 @@ import Foundation
 
 class TimeTable{
     
-    func getTime(_ hour: Int, _ minute: Int) -> ([Int], [Int], Int) {
-        let arrayTime = Purse.getJson(hour)
-        let arrayNextTime = Purse.getJson(hour + 1)
-        let count = arrayTime.filter{ $0 <= minute }.count
+    struct BusTimeCategories {
+        var times: [Int]
+        var nextTimes: [Int]
+        var count : Int
+        init(times: [Int], nextTimes: [Int], count: Int){
+            self.times = times
+            self.nextTimes = nextTimes
+            self.count = count
+        }
+    }
+    
+    static func getTime(hour: Int, minute: Int, busType: Int) -> BusTimeCategories {
         
-        return (arrayTime, arrayNextTime, count)
+        let arrayTime = Purse.getJson(hour, busType: busType)
+        let arrayNextTime = Purse.getJson(hour + 1, busType: busType)
+        let count = arrayTime.filter{ $0 <= minute }.count
+        let busTimeCategories = BusTimeCategories(times: arrayTime, nextTimes: arrayNextTime, count: count)
+        return busTimeCategories
     }
 }
 

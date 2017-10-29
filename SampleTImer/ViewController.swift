@@ -13,22 +13,16 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        let date = Date()
-        let calendar = Calendar.current
-        let hour = calendar.component(.hour, from: date)
-        let minute = calendar.component(.minute, from: date)
-        let second = calendar.component(.second, from: date)
         
-        var kamigamoView = KamigamoViewController()
-        kamigamoView.kamigamoFunc()
-        self.view.addSubview(kamigamoView)
+        let kamigamo = KamigamoViewController()
+        let kita = KitaViewController()
         
         
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
 
 

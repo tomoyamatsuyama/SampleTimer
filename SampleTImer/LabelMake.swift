@@ -32,8 +32,14 @@ class LabelMake{
         
         return (text1, text2, text3, text4)
     }
+//    func nikenCirculation(){
+//        text3 = "次は\(time)発"
+//        text4 = "次\(nextTime)は"
+//        text2 = "約5~10分おきに\n運行します"
+//
+//    }
     
-    func label_countdown(_ countmin: Int, _ printsec: Int) -> String {
+    func labelCountdown(_ countmin: Int, _ printsec: Int) -> String {
         if printsec < 10 {
             if countmin < 10 {
                 text1 = "0\(countmin)分0\(printsec)秒後"
@@ -51,7 +57,7 @@ class LabelMake{
     }
     
     func makeLabel(_ printhour: Int, _ print2ndhour: Int, _ printNextMin:Int, _ print2ndMin: Int, _ countmin: Int, _ printsec: Int) -> (String, String, String, String){
-        text1 = label_countdown(countmin, printsec)
+        text1 = labelCountdown(countmin, printsec)
         if printhour < 10 {
             if printNextMin < 10 {
                 text3 = "次は\(printhour):0\(printNextMin)発"
@@ -78,7 +84,7 @@ class LabelMake{
     }
     
     func lastBus(_ countmin: Int, _ time: String, _ printsec: Int) -> (String, String, String, String){
-        text1 = label_countdown(countmin, printsec)
+        text1 = labelCountdown(countmin, printsec)
         text3 = "最終バス\n\(time)発まで"
         text2 = " "
         text2 = " "
