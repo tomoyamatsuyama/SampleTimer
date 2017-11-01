@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		641E348C1FA75C1400213F31 /* KokusaiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641E348B1FA75C1400213F31 /* KokusaiViewController.swift */; };
 		6456E78A1F9DB1C00079A06C /* TimeTable.json in Resources */ = {isa = PBXBuildFile; fileRef = 6456E7891F9DB1C00079A06C /* TimeTable.json */; };
 		645FB47C1F9D8FFB00D24854 /* TimeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645FB47B1F9D8FFB00D24854 /* TimeTable.swift */; };
 		647C3CC61F9F836D0064C2EE /* Purse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C3CC51F9F836D0064C2EE /* Purse.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		641E348B1FA75C1400213F31 /* KokusaiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KokusaiViewController.swift; sourceTree = "<group>"; };
 		6456E7891F9DB1C00079A06C /* TimeTable.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TimeTable.json; sourceTree = "<group>"; };
 		645FB47B1F9D8FFB00D24854 /* TimeTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTable.swift; sourceTree = "<group>"; };
 		647C3CC51F9F836D0064C2EE /* Purse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purse.swift; sourceTree = "<group>"; };
@@ -112,14 +114,15 @@
 			isa = PBXGroup;
 			children = (
 				6456E7891F9DB1C00079A06C /* TimeTable.json */,
-				6485A1381F9CA61C00E520C6 /* AppDelegate.swift */,
-				6485A13A1F9CA61C00E520C6 /* ViewController.swift */,
+				647C3CC51F9F836D0064C2EE /* Purse.swift */,
 				645FB47B1F9D8FFB00D24854 /* TimeTable.swift */,
+				647C3CC91FA026310064C2EE /* LabelMake.swift */,
 				647C3CC71FA01E2A0064C2EE /* KamigamoViewController.swift */,
 				6498DAA01FA1EB080020E195 /* KitaViewController.swift */,
+				641E348B1FA75C1400213F31 /* KokusaiViewController.swift */,
+				6485A1381F9CA61C00E520C6 /* AppDelegate.swift */,
+				6485A13A1F9CA61C00E520C6 /* ViewController.swift */,
 				647C3CCB1FA04DA10064C2EE /* KamigamoStoryboard.storyboard */,
-				647C3CC91FA026310064C2EE /* LabelMake.swift */,
-				647C3CC51F9F836D0064C2EE /* Purse.swift */,
 				6485A13C1F9CA61C00E520C6 /* Main.storyboard */,
 				6485A13F1F9CA61C00E520C6 /* Assets.xcassets */,
 				6485A1411F9CA61C00E520C6 /* LaunchScreen.storyboard */,
@@ -286,6 +289,7 @@
 				647C3CC61F9F836D0064C2EE /* Purse.swift in Sources */,
 				647C3CCA1FA026310064C2EE /* LabelMake.swift in Sources */,
 				6498DAA11FA1EB080020E195 /* KitaViewController.swift in Sources */,
+				641E348C1FA75C1400213F31 /* KokusaiViewController.swift in Sources */,
 				645FB47C1F9D8FFB00D24854 /* TimeTable.swift in Sources */,
 				647C3CC81FA01E2A0064C2EE /* KamigamoViewController.swift in Sources */,
 				6485A1391F9CA61C00E520C6 /* AppDelegate.swift in Sources */,

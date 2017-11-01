@@ -11,11 +11,13 @@ import Foundation
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let kamigamo = KamigamoViewController()
         let kita = KitaViewController()
+        let kokusai = KokusaiViewController()
         
         
     }

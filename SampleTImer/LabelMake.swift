@@ -6,91 +6,82 @@
 //  Copyright © 2017年 Tomoya Matsuyama. All rights reserved.
 //
 
+import UIKit
 import Foundation
 
-class LabelMake{
+struct BusLabels {
+    var nextTimeText: String = "ただいまの時間は\n運行しておりません"
+    var countTimeText: String = ""
+    var AfterTheNextTimeLabelText: String = ""
+    var AfterTheNextTimeText: String = ""
+}
+
+class MakingBusLabels: UIViewController {
+    var nextTime: String = ""
+    var countTime: String = ""
+    var AfterTheNextTimeLabel: String = ""
+    var AfterTheNextTime: String = ""
     
-    var text1 = ""
-    var text2 = ""
-    var text3 = ""
-    var text4 = ""
-    
-    func notInService() -> (String, String, String, String){
-        text1 = "現在の時間は\n運行してません"
-        text2 = ""
-        text3 = ""
-        text4 = ""
-        
-        return (text1, text2, text3, text4)
+    func circulation(time: String, min: String) -> BusLabels {
+        let nextTime = "\(time)は\n約\(min)分おきに\n運行しています"
+        let countTime = ""
+        let AfterTheNextTimeLabel = ""
+        let AfterTheNextTime = ""
+        let busLabels = BusLabels(nextTimeText: nextTime, countTimeText: countTime, AfterTheNextTimeLabelText: AfterTheNextTimeLabel, AfterTheNextTimeText: AfterTheNextTime)
+        return busLabels
     }
-    
-    func circulation(time: String, min: String) -> (String, String, String, String){
-        text1 = "\(time)は\n約\(min)分おきに\n運行しています"
-        text2 = ""
-        text3 = ""
-        text4 = ""
-        
-        return (text1, text2, text3, text4)
-    }
-//    func nikenCirculation(){
-//        text3 = "次は\(time)発"
-//        text4 = "次\(nextTime)は"
-//        text2 = "約5~10分おきに\n運行します"
-//
-//    }
     
     func labelCountdown(_ countmin: Int, _ printsec: Int) -> String {
         if printsec < 10 {
             if countmin < 10 {
-                text1 = "0\(countmin)分0\(printsec)秒後"
-            }else {
-                text1 = "\(countmin)分0\(printsec)秒後"
+                nextTime = "0\(countmin)分0\(printsec)秒後"
+            } else {
+                nextTime = "\(countmin)分0\(printsec)秒後"
             }
         } else {
             if countmin < 10 {
-                text1 = "0\(countmin)分\(printsec)秒後"
-            }else {
-                text1 = "\(countmin)分\(printsec)秒後"
+                nextTime = "0\(countmin)分\(printsec)秒後"
+            } else {
+                nextTime = "\(countmin)分\(printsec)秒後"
             }
         }
-        return text1
+        return nextTime
     }
     
-    func makeLabel(_ printhour: Int, _ print2ndhour: Int, _ printNextMin:Int, _ print2ndMin: Int, _ countmin: Int, _ printsec: Int) -> (String, String, String, String){
-        text1 = labelCountdown(countmin, printsec)
+    func makeLabel(_ printhour: Int, _ print2ndhour: Int, _ printNextMin:Int, _ print2ndMin: Int, _ countmin: Int, _ printsec: Int) -> BusLabels{
+        let nextTime = labelCountdown(countmin, printsec)
+        
         if printhour < 10 {
             if printNextMin < 10 {
-                text3 = "次は\(printhour):0\(printNextMin)発"
-            }else {
-                text3 = "次は\(printhour):\(printNextMin)発"
+                AfterTheNextTimeLabel = "次は\(printhour):0\(printNextMin)発"
+            } else {
+                AfterTheNextTimeLabel = "次は\(printhour):\(printNextMin)発"
             }
-            
         } else {
             if printNextMin < 10 {
-                text3 = "次は\(printhour):0\(printNextMin)発"
-            }else {
-                text3 = "次は\(printhour):\(printNextMin)発"
+                AfterTheNextTimeLabel = "次は\(printhour):0\(printNextMin)発"
+            } else {
+                AfterTheNextTimeLabel = "次は\(printhour):\(printNextMin)発"
             }
-            
         }
-        text4 = "その次のバスは"
+        let AfterTheNextTime = "その次のバスは"
+        
         if print2ndMin < 10 {
-            text2 = "\(print2ndhour)時0\(print2ndMin)分"
-        }else{
-            text2 = "\(print2ndhour)時\(print2ndMin)分"
+            countTime = "\(print2ndhour)時0\(print2ndMin)分"
+        } else{
+            countTime = "\(print2ndhour)時\(print2ndMin)分"
         }
-        
-        return (text1, text2, text3, text4)
+        let busLabels = BusLabels(nextTimeText: nextTime, countTimeText: countTime, AfterTheNextTimeLabelText: AfterTheNextTimeLabel, AfterTheNextTimeText: AfterTheNextTime)
+        return busLabels
     }
     
-    func lastBus(_ countmin: Int, _ time: String, _ printsec: Int) -> (String, String, String, String){
-        text1 = labelCountdown(countmin, printsec)
-        text3 = "最終バス\n\(time)発まで"
-        text2 = " "
-        text2 = " "
+    func lastBus(_ countmin: Int, _ time: String, _ printsec: Int) -> BusLabels{
+        nextTime = labelCountdown(countmin, printsec)
+        AfterTheNextTimeLabel = "最終バス\n\(time)発まで"
+        countTime = " "
+        AfterTheNextTime = " "
         
-        return (text1, text2, text3, text4)
+        let busLabels = BusLabels(nextTimeText: nextTime, countTimeText: countTime, AfterTheNextTimeLabelText: AfterTheNextTimeLabel, AfterTheNextTimeText: AfterTheNextTime)
+        return busLabels
     }
-
-    
 }

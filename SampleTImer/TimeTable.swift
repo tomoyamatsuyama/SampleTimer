@@ -16,15 +16,9 @@ class TimeTable{
         var times: [Int]
         var nextTimes: [Int]
         var count : Int
-        init(times: [Int], nextTimes: [Int], count: Int){
-            self.times = times
-            self.nextTimes = nextTimes
-            self.count = count
-        }
     }
     
     static func getTime(hour: Int, minute: Int, busType: Int) -> BusTimeCategories {
-        
         let arrayTime = Purse.getJson(hour, busType: busType)
         let arrayNextTime = Purse.getJson(hour + 1, busType: busType)
         let count = arrayTime.filter{ $0 <= minute }.count
