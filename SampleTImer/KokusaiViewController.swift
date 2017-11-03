@@ -7,24 +7,16 @@
 //
 
 import UIKit
+import Foundation
 
-class KokusaiViewController: MakingBusLabels {
+class KokusaiViewController: BusTimerViewController {
+    @IBOutlet private weak var kokusaiNextTimeLabel: UILabel!
+    @IBOutlet private weak var kokusaiCountTime: UILabel!
+    @IBOutlet private weak var kokusaiAfterTheNextLabel: UILabel!
+    @IBOutlet private weak var kokusaiAfterTheNextTime: UILabel!
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        initialize()
-    }
-    
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: Bundle!) {
-        super.init(nibName: nil, bundle: nil)
-        initialize()
-    }
-    
-    convenience init() {
-        self.init(nibName: nil, bundle: nil)
-    }
-    func busTimeCalclation(_ hour: Int, _ minute: Int, _ printsec: Int, _ mixLabel: BusLabels, busType: Int) -> BusLabels{
-        var mixLabel = mixLabel
+    private func busTimeCalclation(_ hour: Int, _ minute: Int, _ printsec: Int, _ inputMixLabel: BusLabels, busType: Int) -> BusLabels {
+        var mixLabel = inputMixLabel
         
         if ((23 == hour && minute >= 02) || (6 >= hour) || (24 <= hour )) {
             return mixLabel
@@ -32,30 +24,29 @@ class KokusaiViewController: MakingBusLabels {
             let busTimeCategories = TimeTable.getTime(hour: hour, minute: minute, busType: busType)
             let arrayTime = busTimeCategories.times
             let arrayNextTime = busTimeCategories.nextTimes
-            let count = busTimeCategories.count
         
-            if arrayTime.count == count {
+            if arrayTime.count == busTimeCategories.count {
                 
                 if hour == 22 && minute >= 20 {
-                    mixLabel = super.lastBus((60 - (minute + 1) + 2), "23:02", printsec)
+                    mixLabel = lastBus((60 - (minute + 1) + 2), "23:02", printsec)
                 } else {
-                    mixLabel = super.makeLabel(hour + 1, hour + 1, arrayNextTime[0], arrayNextTime[1], ((59 - minute) + arrayNextTime[0]), printsec)
+                    mixLabel = makeLabel(hour + 1, hour + 1, arrayNextTime[0], arrayNextTime[1], ((59 - minute) + arrayNextTime[0]), printsec)
                 }
-            } else if arrayTime.count == count + 1 {
+            } else if arrayTime.count == busTimeCategories.count + 1 {
                 
                 if hour == 23 {
-                    mixLabel = super.lastBus(02 - (minute + 1), "23:02", printsec)
+                    mixLabel = lastBus(02 - (minute + 1), "23:02", printsec)
                 } else {
-                    mixLabel = super.makeLabel(hour, hour + 1, arrayTime[count], arrayNextTime[0], 59 - arrayTime[count], printsec)
+                    mixLabel = makeLabel(hour, hour + 1, arrayTime[busTimeCategories.count], arrayNextTime[0], 59 - arrayTime[busTimeCategories.count], printsec)
                 }
             } else {
-                mixLabel = super.makeLabel(hour, hour, arrayTime[count], arrayTime[count + 1], 59 - arrayTime[count], printsec)
+                mixLabel = makeLabel(hour, hour, arrayTime[busTimeCategories.count], arrayTime[busTimeCategories.count + 1], 59 - arrayTime[busTimeCategories.count], printsec)
             }
         }
         return mixLabel
     }
     
-    func initialize(){
+    func kokusai(){
         let date = Date()
         let calendar = Calendar.current
         let hour = calendar.component(.hour, from: date)
@@ -65,27 +56,25 @@ class KokusaiViewController: MakingBusLabels {
         let printsec = 59 - second
         var mixLabel: BusLabels = BusLabels()
         
-        enum Week: Int{
+        enum BusSelect: Int{
             case Sun = 1
             case Sat = 7
         }
         
         switch weekday {
-            
-        case Week.Sun.rawValue:
+        case BusSelect.Sun.rawValue:
             mixLabel = busTimeCalclation(hour, minute, printsec, mixLabel, busType: 11)
             
-        case Week.Sat.rawValue:
+        case BusSelect.Sat.rawValue:
             mixLabel = busTimeCalclation(hour, minute, printsec, mixLabel, busType: 10)
             
         default:
             mixLabel = busTimeCalclation(hour, minute, printsec, mixLabel, busType: 8)
         }
         
-        print("国際会館")
-        print(mixLabel.nextTimeText)
-        print(mixLabel.countTimeText)
-        print(mixLabel.AfterTheNextTimeLabelText)
-        print(mixLabel.AfterTheNextTimeText)
+        self.kokusaiNextTimeLabel?.text = mixLabel.nextTimeText
+        self.kokusaiCountTime?.text = mixLabel.countTimeText
+        self.kokusaiAfterTheNextLabel?.text = mixLabel.AfterTheNextTimeLabelText
+        self.kokusaiAfterTheNextTime?.text = mixLabel.AfterTheNextTimeText
     }
 }

@@ -9,55 +9,40 @@
 import UIKit
 import Foundation
 
-class KamigamoViewController:  MakingBusLabels {
+class KamigamoViewController: BusTimerViewController {
     
-    @IBOutlet private weak var kamigamoNextTime: UILabel!
-    @IBOutlet private weak var kamigamoCountTime: UILabel!
-    @IBOutlet private weak var kamigamoAfterTheNextTimeLabel: UILabel!
-    @IBOutlet private weak var kamigamoAfterTheNextTime: UILabel!
+    @IBOutlet private weak var kamigamoNextTimeLabel: UILabel!
+    @IBOutlet private weak var KamigamoCountTime: UILabel!
+    @IBOutlet private weak var KamigamoAfterTheNextLabel: UILabel!
+    @IBOutlet private weak var KamigamoAfterTheNextTime: UILabel!
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        initialize()
-    }
-    
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: Bundle!) {
-        super.init(nibName: nil, bundle: nil)
-        initialize()
-    }
-    
-    convenience init() {
-        self.init(nibName: nil, bundle: nil)
-    }
-    
-    func weekAndWedCalclation(notInServiceHour: Int = 21, lastBusHour: Int = 20, lastBusCountTime: Int = 59, lastBusTime: String = "21:00", _ hour: Int, _ mixLabel: BusLabels, _ minute: Int, _ printsec: Int, busType: Int) -> BusLabels{
+    private func weekAndWedCalclation(notInServiceHour: Int = 21, lastBusHour: Int = 20, lastBusCountTime: Int = 59, lastBusTime: String = "21:00", _ hour: Int, _ inputMixLabel: BusLabels, _ minute: Int, _ printsec: Int, busType: Int) -> BusLabels {
         
-        var mixLabel = mixLabel
+        var mixLabel = inputMixLabel
         if notInServiceHour <= hour || 7 >= hour {
             return mixLabel
         } else {
             let busTimeCategories = TimeTable.getTime(hour: hour, minute: minute, busType: busType)
             let arrayTime = busTimeCategories.times
             let arrayNextTime = busTimeCategories.nextTimes
-            let count = busTimeCategories.count
             
-            if arrayTime.count == count {
+            if arrayTime.count == busTimeCategories.count {
                 
                 if hour == lastBusHour {
-                    mixLabel = super.lastBus((lastBusCountTime - minute), lastBusTime, printsec)
+                    mixLabel = lastBus((lastBusCountTime - minute), lastBusTime, printsec)
                 } else {
-                    mixLabel = super.makeLabel(hour + 1, hour + 1, arrayNextTime[0], arrayNextTime[1], ((59 - minute) + arrayNextTime[0]), printsec)
+                    mixLabel = makeLabel(hour + 1, hour + 1, arrayNextTime[0], arrayNextTime[1], ((59 - minute) + arrayNextTime[0]), printsec)
                 }
-            } else if (arrayTime.count == count + 1) {
-                mixLabel = super.makeLabel(hour, hour + 1, arrayTime[count], arrayNextTime[0], 59 - arrayTime[count], printsec)
+            } else if arrayTime.count == busTimeCategories.count + 1 {
+                mixLabel = makeLabel(hour, hour + 1, arrayTime[busTimeCategories.count], arrayNextTime[0], 59 - arrayTime[busTimeCategories.count], printsec)
             } else {
-                mixLabel = super.makeLabel(hour, hour, arrayTime[count], arrayTime[count + 1], 59 - arrayTime[count], printsec)
+                mixLabel = makeLabel(hour, hour, arrayTime[busTimeCategories.count], arrayTime[busTimeCategories.count + 1], 59 - arrayTime[busTimeCategories.count], printsec)
             }
         }
         return mixLabel
     }
     
-    func initialize(){
+    func kamigamo(){
         let date = Date()
         let calendar = Calendar.current
         let hour = calendar.component(.hour, from: date)
@@ -67,37 +52,37 @@ class KamigamoViewController:  MakingBusLabels {
         let printsec = 59 - second
         var mixLabel: BusLabels = BusLabels()
         
-        enum Week: Int{
+        enum BusSelect: Int{
             case Sun = 1
             case Wed = 4
             case Sat = 7
         }
         
         switch weekday {
-        case Week.Sun.rawValue:
+        case BusSelect.Sun.rawValue:
             break
             
-        case Week.Wed.rawValue:
+        case BusSelect.Wed.rawValue:
             if hour == 8 {
-                mixLabel = super.circulation(time: "08:00~09:05", min: "2~5")
+                mixLabel = circulation(time: "08:00~09:05", min: "2~5")
             } else {
                 mixLabel = weekAndWedCalclation(hour, mixLabel, minute, printsec, busType: 1)
             }
 
-        case Week.Sat.rawValue:
+        case BusSelect.Sat.rawValue:
             mixLabel = weekAndWedCalclation(notInServiceHour: 14, lastBusHour: 12, lastBusCountTime: 64, lastBusTime: "13:05", hour, mixLabel, minute, printsec, busType: 2)
             
         default:
             if hour == 8 {
-                mixLabel = super.circulation(time: "08:00~09:05", min: "2~5")
+                mixLabel = circulation(time: "08:00~09:05", min: "2~5")
             } else {
                 mixLabel = weekAndWedCalclation(hour, mixLabel, minute, printsec, busType: 0)
             }
         }
-        print("上賀茂")
-        print(mixLabel.nextTimeText)
-        print(mixLabel.countTimeText)
-        print(mixLabel.AfterTheNextTimeLabelText)
-        print(mixLabel.AfterTheNextTimeText)
+        
+        self.kamigamoNextTimeLabel?.text = mixLabel.nextTimeText
+        self.KamigamoCountTime?.text = mixLabel.countTimeText
+        self.KamigamoAfterTheNextLabel?.text = mixLabel.AfterTheNextTimeLabelText
+        self.KamigamoAfterTheNextTime?.text = mixLabel.AfterTheNextTimeText
     }
 }

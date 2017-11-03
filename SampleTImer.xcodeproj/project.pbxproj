@@ -12,8 +12,7 @@
 		645FB47C1F9D8FFB00D24854 /* TimeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645FB47B1F9D8FFB00D24854 /* TimeTable.swift */; };
 		647C3CC61F9F836D0064C2EE /* Purse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C3CC51F9F836D0064C2EE /* Purse.swift */; };
 		647C3CC81FA01E2A0064C2EE /* KamigamoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C3CC71FA01E2A0064C2EE /* KamigamoViewController.swift */; };
-		647C3CCA1FA026310064C2EE /* LabelMake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C3CC91FA026310064C2EE /* LabelMake.swift */; };
-		647C3CCC1FA04DA10064C2EE /* KamigamoStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 647C3CCB1FA04DA10064C2EE /* KamigamoStoryboard.storyboard */; };
+		647C3CCA1FA026310064C2EE /* BusTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C3CC91FA026310064C2EE /* BusTimerViewController.swift */; };
 		6485A1391F9CA61C00E520C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6485A1381F9CA61C00E520C6 /* AppDelegate.swift */; };
 		6485A13B1F9CA61C00E520C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6485A13A1F9CA61C00E520C6 /* ViewController.swift */; };
 		6485A13E1F9CA61C00E520C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6485A13C1F9CA61C00E520C6 /* Main.storyboard */; };
@@ -22,6 +21,8 @@
 		6485A14E1F9CA61D00E520C6 /* SampleTImerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6485A14D1F9CA61D00E520C6 /* SampleTImerTests.swift */; };
 		6485A1591F9CA61D00E520C6 /* SampleTImerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6485A1581F9CA61D00E520C6 /* SampleTImerUITests.swift */; };
 		6498DAA11FA1EB080020E195 /* KitaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6498DAA01FA1EB080020E195 /* KitaViewController.swift */; };
+		64CF05531FAB5A580019CCF2 /* NikenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CF05521FAB5A580019CCF2 /* NikenViewController.swift */; };
+		64FD16361FAC67BC0005741C /* TimerPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD16351FAC67BC0005741C /* TimerPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,8 +48,7 @@
 		645FB47B1F9D8FFB00D24854 /* TimeTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTable.swift; sourceTree = "<group>"; };
 		647C3CC51F9F836D0064C2EE /* Purse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purse.swift; sourceTree = "<group>"; };
 		647C3CC71FA01E2A0064C2EE /* KamigamoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KamigamoViewController.swift; sourceTree = "<group>"; };
-		647C3CC91FA026310064C2EE /* LabelMake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelMake.swift; sourceTree = "<group>"; };
-		647C3CCB1FA04DA10064C2EE /* KamigamoStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = KamigamoStoryboard.storyboard; sourceTree = "<group>"; };
+		647C3CC91FA026310064C2EE /* BusTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusTimerViewController.swift; sourceTree = "<group>"; };
 		6485A1351F9CA61C00E520C6 /* SampleTImer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleTImer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6485A1381F9CA61C00E520C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6485A13A1F9CA61C00E520C6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +63,8 @@
 		6485A1581F9CA61D00E520C6 /* SampleTImerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTImerUITests.swift; sourceTree = "<group>"; };
 		6485A15A1F9CA61D00E520C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6498DAA01FA1EB080020E195 /* KitaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitaViewController.swift; sourceTree = "<group>"; };
+		64CF05521FAB5A580019CCF2 /* NikenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NikenViewController.swift; sourceTree = "<group>"; };
+		64FD16351FAC67BC0005741C /* TimerPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,17 +118,18 @@
 				6456E7891F9DB1C00079A06C /* TimeTable.json */,
 				647C3CC51F9F836D0064C2EE /* Purse.swift */,
 				645FB47B1F9D8FFB00D24854 /* TimeTable.swift */,
-				647C3CC91FA026310064C2EE /* LabelMake.swift */,
+				647C3CC91FA026310064C2EE /* BusTimerViewController.swift */,
 				647C3CC71FA01E2A0064C2EE /* KamigamoViewController.swift */,
+				64CF05521FAB5A580019CCF2 /* NikenViewController.swift */,
 				6498DAA01FA1EB080020E195 /* KitaViewController.swift */,
 				641E348B1FA75C1400213F31 /* KokusaiViewController.swift */,
 				6485A1381F9CA61C00E520C6 /* AppDelegate.swift */,
-				6485A13A1F9CA61C00E520C6 /* ViewController.swift */,
-				647C3CCB1FA04DA10064C2EE /* KamigamoStoryboard.storyboard */,
+				64FD16351FAC67BC0005741C /* TimerPageViewController.swift */,
 				6485A13C1F9CA61C00E520C6 /* Main.storyboard */,
 				6485A13F1F9CA61C00E520C6 /* Assets.xcassets */,
 				6485A1411F9CA61C00E520C6 /* LaunchScreen.storyboard */,
 				6485A1441F9CA61C00E520C6 /* Info.plist */,
+				6485A13A1F9CA61C00E520C6 /* ViewController.swift */,
 			);
 			path = SampleTImer;
 			sourceTree = "<group>";
@@ -259,7 +262,6 @@
 				6485A1431F9CA61C00E520C6 /* LaunchScreen.storyboard in Resources */,
 				6485A1401F9CA61C00E520C6 /* Assets.xcassets in Resources */,
 				6485A13E1F9CA61C00E520C6 /* Main.storyboard in Resources */,
-				647C3CCC1FA04DA10064C2EE /* KamigamoStoryboard.storyboard in Resources */,
 				6456E78A1F9DB1C00079A06C /* TimeTable.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,11 +289,13 @@
 			files = (
 				6485A13B1F9CA61C00E520C6 /* ViewController.swift in Sources */,
 				647C3CC61F9F836D0064C2EE /* Purse.swift in Sources */,
-				647C3CCA1FA026310064C2EE /* LabelMake.swift in Sources */,
+				647C3CCA1FA026310064C2EE /* BusTimerViewController.swift in Sources */,
 				6498DAA11FA1EB080020E195 /* KitaViewController.swift in Sources */,
 				641E348C1FA75C1400213F31 /* KokusaiViewController.swift in Sources */,
 				645FB47C1F9D8FFB00D24854 /* TimeTable.swift in Sources */,
 				647C3CC81FA01E2A0064C2EE /* KamigamoViewController.swift in Sources */,
+				64FD16361FAC67BC0005741C /* TimerPageViewController.swift in Sources */,
+				64CF05531FAB5A580019CCF2 /* NikenViewController.swift in Sources */,
 				6485A1391F9CA61C00E520C6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

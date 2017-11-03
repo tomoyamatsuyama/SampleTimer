@@ -23,10 +23,10 @@ class BusTimerViewController: UIViewController {
     var AfterTheNextTime: String = ""
     
     func circulation(time: String, min: String) -> BusLabels {
-        let nextTime: String = "\(time)は\n約\(min)分おきに\n運行しています"
-        let countTime: String = ""
-        let AfterTheNextTimeLabel: String = ""
-        let AfterTheNextTime: String = ""
+        nextTime = "\(time)は\n約\(min)分おきに\n運行しています"
+        countTime = ""
+        AfterTheNextTimeLabel = ""
+        AfterTheNextTime = ""
         return BusLabels(nextTimeText: nextTime, countTimeText: countTime, AfterTheNextTimeLabelText: AfterTheNextTimeLabel, AfterTheNextTimeText: AfterTheNextTime)
     }
     
@@ -48,8 +48,8 @@ class BusTimerViewController: UIViewController {
     }
     
     func makeLabel(_ printhour: Int, _ print2ndhour: Int, _ printNextMin:Int, _ print2ndMin: Int, _ countmin: Int, _ printsec: Int) -> BusLabels{
-        let countTime = labelCountdown(countmin, printsec)
         
+        countTime = labelCountdown(countmin, printsec)
         if printhour < 10 {
             if printNextMin < 10 {
                 nextTime = "次は\(printhour):0\(printNextMin)発"
@@ -63,7 +63,6 @@ class BusTimerViewController: UIViewController {
                 nextTime = "次は\(printhour):\(printNextMin)発"
             }
         }
-        
         AfterTheNextTimeLabel = "その次のバスは"
         
         if print2ndMin < 10 {
