@@ -31,7 +31,7 @@ class KitaViewController: BusTimerViewController{
                     mixLabel = lastBus(lastBusMinute + (59 - minute) , lastBusTime, printsec)
                     
                 } else {
-                    mixLabel = makeLabel(hour, hour + 1, arrayNextTime[0], arrayNextTime[1], ((59 - minute) + arrayNextTime[0]), printsec)
+                    mixLabel = makeLabel(hour + 1, hour + 1, arrayNextTime[0], arrayNextTime[1], ((59 - minute) + arrayNextTime[0]), printsec)
                 }
             } else if arrayTime.count == busTimeCategories.count + 1 {
                 
@@ -49,7 +49,7 @@ class KitaViewController: BusTimerViewController{
         return mixLabel
     }
     
-    func kita(){
+    private func initialize(){
         let date = Date()
         let calendar = Calendar.current
         let hour = calendar.component(.hour, from: date)
@@ -79,5 +79,12 @@ class KitaViewController: BusTimerViewController{
         self.kitaCountTime?.text = mixLabel.countTimeText
         self.kitaAfterTheNextLabel?.text = mixLabel.AfterTheNextTimeLabelText
         self.kitaAfterTheNextTime?.text = mixLabel.AfterTheNextTimeText
+    }
+    override func viewDidLoad() {
+        self.view.backgroundColor = UIColor.colorWithHexString("2e2e2e")
+        self.navigationItem.title = "北大路BT行き"
+        Timer.scheduledTimer(withTimeInterval: 0.9, repeats: true) {_ in
+            self.initialize()
+        }
     }
 }

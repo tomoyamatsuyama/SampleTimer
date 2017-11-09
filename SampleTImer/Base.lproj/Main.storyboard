@@ -1,52 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oU1-xu-JVX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cng-8B-R1G">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Timer Page View Controller-->
+        <!--上賀茂神社行き-->
         <scene sceneID="qbc-Yp-SXb">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="oU1-xu-JVX" customClass="TimerPageViewController" customModule="SampleTImer" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="oU1-xu-JVX" customClass="TimerPageViewController" customModule="SampleTImer" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="上賀茂神社行き" id="Uth-4G-7eL"/>
+                </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y49-aD-BqW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-858" y="-6"/>
+            <point key="canvasLocation" x="-519.20000000000005" y="-6.746626686656672"/>
         </scene>
         <!--Kamigamo View Controller-->
         <scene sceneID="DaO-wd-QGZ">
             <objects>
-                <viewController storyboardIdentifier="Kamigamo" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Yn6-Sf-WWm" customClass="KamigamoViewController" customModule="SampleTImer" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Kamigamo" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Yn6-Sf-WWm" customClass="KamigamoViewController" customModule="SampleTImer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="npu-E8-b00">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ya-Em-0Ro" userLabel="kamigamoNextTimeLabel">
-                                <rect key="frame" x="166" y="60" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="次は00:00発" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ya-Em-0Ro" userLabel="kamigamoNextTimeLabel">
+                                <rect key="frame" x="115.5" y="80" width="145" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZL-54-jho" userLabel="KamigamoCountTime">
-                                <rect key="frame" x="166" y="126" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00分00秒後" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZL-54-jho" userLabel="KamigamoCountTime">
+                                <rect key="frame" x="102.5" y="155" width="171" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sk8-Nb-SrS" userLabel="KamigamoAfterTheNextLabel">
-                                <rect key="frame" x="166" y="192" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="その次のバスは" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sk8-Nb-SrS" userLabel="KamigamoAfterTheNextLabel">
+                                <rect key="frame" x="99.5" y="237" width="177.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Beb-R9-Gab" userLabel="KamigamoAfterTheNextTime">
-                                <rect key="frame" x="166" y="258" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00時00発" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Beb-R9-Gab" userLabel="KamigamoAfterTheNextTime">
+                                <rect key="frame" x="131" y="312" width="113" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -54,7 +57,7 @@
                         <constraints>
                             <constraint firstItem="Beb-R9-Gab" firstAttribute="top" secondItem="Sk8-Nb-SrS" secondAttribute="bottom" constant="45" id="7fm-88-ZRy"/>
                             <constraint firstItem="Sk8-Nb-SrS" firstAttribute="centerX" secondItem="npu-E8-b00" secondAttribute="centerX" id="Abw-4I-XUB"/>
-                            <constraint firstItem="4ya-Em-0Ro" firstAttribute="top" secondItem="KFy-FM-Bqd" secondAttribute="top" constant="40" id="DSM-ko-VMh"/>
+                            <constraint firstItem="4ya-Em-0Ro" firstAttribute="top" secondItem="KFy-FM-Bqd" secondAttribute="top" constant="60" id="DSM-ko-VMh"/>
                             <constraint firstItem="Sk8-Nb-SrS" firstAttribute="top" secondItem="MZL-54-jho" secondAttribute="bottom" constant="45" id="KNe-4m-XyH"/>
                             <constraint firstItem="MZL-54-jho" firstAttribute="centerX" secondItem="npu-E8-b00" secondAttribute="centerX" id="cCp-fE-aJa"/>
                             <constraint firstItem="4ya-Em-0Ro" firstAttribute="centerX" secondItem="npu-E8-b00" secondAttribute="centerX" id="fr4-77-C1w"/>
@@ -72,38 +75,38 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ONV-g8-0hR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-60" y="-7"/>
+            <point key="canvasLocation" x="279.19999999999999" y="-7.6461769115442282"/>
         </scene>
         <!--Niken View Controller-->
         <scene sceneID="6mC-mt-b0r">
             <objects>
-                <viewController storyboardIdentifier="Niken" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VkY-Y5-j3f" customClass="NikenViewController" customModule="SampleTImer" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Niken" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VkY-Y5-j3f" customClass="NikenViewController" customModule="SampleTImer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UBS-59-AtZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHr-D9-oN4" userLabel="nikenNextTimeLabel">
-                                <rect key="frame" x="166" y="60" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="次は00:00発" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHr-D9-oN4" userLabel="nikenNextTimeLabel">
+                                <rect key="frame" x="115" y="80" width="145" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0E-xV-QI5" userLabel="nikenCountTime">
-                                <rect key="frame" x="166" y="126" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00分00秒後" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0E-xV-QI5" userLabel="nikenCountTime">
+                                <rect key="frame" x="102" y="155" width="171" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5im-GD-Lfa" userLabel="nikenAfterTheNextLabel">
-                                <rect key="frame" x="166" y="192" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="その次のバスは" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5im-GD-Lfa" userLabel="nikenAfterTheNextLabel">
+                                <rect key="frame" x="99.5" y="237" width="177.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huH-q8-gnB" userLabel="nikenAfterTheNextTime">
-                                <rect key="frame" x="166" y="258" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00時00分発" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huH-q8-gnB" userLabel="nikenAfterTheNextTime">
+                                <rect key="frame" x="118.5" y="312" width="138.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -114,7 +117,7 @@
                             <constraint firstItem="5im-GD-Lfa" firstAttribute="centerX" secondItem="UBS-59-AtZ" secondAttribute="centerX" id="UPd-WE-T5V"/>
                             <constraint firstItem="huH-q8-gnB" firstAttribute="centerX" secondItem="UBS-59-AtZ" secondAttribute="centerX" id="dnN-iQ-kJA"/>
                             <constraint firstItem="ZHr-D9-oN4" firstAttribute="centerX" secondItem="UBS-59-AtZ" secondAttribute="centerX" id="nKb-RN-sgt"/>
-                            <constraint firstItem="ZHr-D9-oN4" firstAttribute="top" secondItem="vHD-2U-7eo" secondAttribute="top" constant="40" id="o0O-ch-tak"/>
+                            <constraint firstItem="ZHr-D9-oN4" firstAttribute="top" secondItem="vHD-2U-7eo" secondAttribute="top" constant="60" id="o0O-ch-tak"/>
                             <constraint firstItem="G0E-xV-QI5" firstAttribute="centerX" secondItem="UBS-59-AtZ" secondAttribute="centerX" id="y8c-gR-9EZ"/>
                             <constraint firstItem="huH-q8-gnB" firstAttribute="top" secondItem="5im-GD-Lfa" secondAttribute="bottom" constant="45" id="ye6-Od-hEG"/>
                         </constraints>
@@ -129,38 +132,38 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kvD-Vu-Hr3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="705" y="-8"/>
+            <point key="canvasLocation" x="1044" y="-8.5457271364317844"/>
         </scene>
         <!--Kita View Controller-->
         <scene sceneID="Hl8-Y6-n9h">
             <objects>
-                <viewController storyboardIdentifier="Kita" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aaA-3w-ozH" customClass="KitaViewController" customModule="SampleTImer" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Kita" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aaA-3w-ozH" customClass="KitaViewController" customModule="SampleTImer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SBy-a5-h0i">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r23-ej-huq" userLabel="kitaNextTimeLabel">
-                                <rect key="frame" x="166" y="60" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="次は00:00発" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r23-ej-huq" userLabel="kitaNextTimeLabel">
+                                <rect key="frame" x="115" y="80" width="145" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7d-7B-sKM" userLabel="kitaCountTime">
-                                <rect key="frame" x="166" y="126" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00分00秒後" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7d-7B-sKM" userLabel="kitaCountTime">
+                                <rect key="frame" x="102.5" y="155" width="171" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X1K-qG-NfU" userLabel="kitaAfterTheNextLabel">
-                                <rect key="frame" x="166" y="192" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="その次のバスは" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X1K-qG-NfU" userLabel="kitaAfterTheNextLabel">
+                                <rect key="frame" x="99" y="237" width="177.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLR-17-sxp" userLabel="kitaAfterTheNextTime">
-                                <rect key="frame" x="166" y="258" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00時00分発" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLR-17-sxp" userLabel="kitaAfterTheNextTime">
+                                <rect key="frame" x="118.5" y="312" width="138.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -171,7 +174,7 @@
                             <constraint firstItem="c7d-7B-sKM" firstAttribute="top" secondItem="r23-ej-huq" secondAttribute="bottom" constant="45" id="GLN-FX-N0S"/>
                             <constraint firstItem="dLR-17-sxp" firstAttribute="top" secondItem="X1K-qG-NfU" secondAttribute="bottom" constant="45" id="RaQ-Mh-RuV"/>
                             <constraint firstItem="dLR-17-sxp" firstAttribute="centerX" secondItem="SBy-a5-h0i" secondAttribute="centerX" id="WCh-EX-nIK"/>
-                            <constraint firstItem="r23-ej-huq" firstAttribute="top" secondItem="tlW-Lr-uOj" secondAttribute="top" constant="40" id="b5N-AR-xct"/>
+                            <constraint firstItem="r23-ej-huq" firstAttribute="top" secondItem="tlW-Lr-uOj" secondAttribute="top" constant="60" id="b5N-AR-xct"/>
                             <constraint firstItem="r23-ej-huq" firstAttribute="centerX" secondItem="SBy-a5-h0i" secondAttribute="centerX" id="iJd-sN-7Ih"/>
                             <constraint firstItem="c7d-7B-sKM" firstAttribute="centerX" secondItem="SBy-a5-h0i" secondAttribute="centerX" id="kfW-fT-LFq"/>
                         </constraints>
@@ -191,33 +194,33 @@
         <!--Kokusai View Controller-->
         <scene sceneID="P7P-yv-JEI">
             <objects>
-                <viewController storyboardIdentifier="Kokusai" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oM6-KT-FeV" customClass="KokusaiViewController" customModule="SampleTImer" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Kokusai" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oM6-KT-FeV" customClass="KokusaiViewController" customModule="SampleTImer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ylC-zg-62x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rTH-Ag-4rQ" userLabel="kokusaiNextTimeLabel">
-                                <rect key="frame" x="166.5" y="60" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="次のバスは00:00発" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rTH-Ag-4rQ" userLabel="kokusaiNextTimeLabel">
+                                <rect key="frame" x="77.5" y="80" width="221" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LvA-tN-aZv" userLabel="kokusaiCountTime">
-                                <rect key="frame" x="166.5" y="126" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00分00秒後" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LvA-tN-aZv" userLabel="kokusaiCountTime">
+                                <rect key="frame" x="102" y="155" width="171" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iyf-tF-sIe" userLabel="kokusaiAfterTheNextLabel">
-                                <rect key="frame" x="166.5" y="192" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="その次のバスは" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iyf-tF-sIe" userLabel="kokusaiAfterTheNextLabel">
+                                <rect key="frame" x="99.5" y="237" width="177.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HFu-44-UFo" userLabel="kokusaiAfterTheNextTime">
-                                <rect key="frame" x="166.5" y="258" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00時00分発" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HFu-44-UFo" userLabel="kokusaiAfterTheNextTime">
+                                <rect key="frame" x="118.5" y="312" width="138.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -229,7 +232,7 @@
                             <constraint firstItem="HFu-44-UFo" firstAttribute="centerX" secondItem="ylC-zg-62x" secondAttribute="centerX" id="ckR-D0-mEy"/>
                             <constraint firstItem="Iyf-tF-sIe" firstAttribute="top" secondItem="LvA-tN-aZv" secondAttribute="bottom" constant="45" id="d3k-kV-tX1"/>
                             <constraint firstItem="rTH-Ag-4rQ" firstAttribute="centerX" secondItem="ylC-zg-62x" secondAttribute="centerX" id="lw8-jr-aWn"/>
-                            <constraint firstItem="rTH-Ag-4rQ" firstAttribute="top" secondItem="5fd-wj-ZyX" secondAttribute="top" constant="40" id="wsi-MJ-ajp"/>
+                            <constraint firstItem="rTH-Ag-4rQ" firstAttribute="top" secondItem="5fd-wj-ZyX" secondAttribute="top" constant="60" id="wsi-MJ-ajp"/>
                             <constraint firstItem="LvA-tN-aZv" firstAttribute="centerX" secondItem="ylC-zg-62x" secondAttribute="centerX" id="xQo-gG-pA5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5fd-wj-ZyX"/>
@@ -243,7 +246,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AwZ-4x-Nrp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="705" y="723"/>
+            <point key="canvasLocation" x="751" y="723"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tcN-jS-sVH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cng-8B-R1G" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="A7Q-Un-bue">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="oU1-xu-JVX" kind="relationship" relationship="rootViewController" id="ECY-GE-cbt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tcH-Y6-D1O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1324" y="-8"/>
         </scene>
     </scenes>
 </document>

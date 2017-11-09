@@ -16,6 +16,7 @@ class KamigamoViewController: BusTimerViewController {
     @IBOutlet private weak var KamigamoAfterTheNextLabel: UILabel!
     @IBOutlet private weak var KamigamoAfterTheNextTime: UILabel!
     
+    
     private func weekAndWedCalclation(notInServiceHour: Int = 21, lastBusHour: Int = 20, lastBusCountTime: Int = 59, lastBusTime: String = "21:00", _ hour: Int, _ inputMixLabel: BusLabels, _ minute: Int, _ printsec: Int, busType: Int) -> BusLabels {
         
         var mixLabel = inputMixLabel
@@ -42,7 +43,7 @@ class KamigamoViewController: BusTimerViewController {
         return mixLabel
     }
     
-    func kamigamo(){
+    private func initialize(){
         let date = Date()
         let calendar = Calendar.current
         let hour = calendar.component(.hour, from: date)
@@ -85,4 +86,14 @@ class KamigamoViewController: BusTimerViewController {
         self.KamigamoAfterTheNextLabel?.text = mixLabel.AfterTheNextTimeLabelText
         self.KamigamoAfterTheNextTime?.text = mixLabel.AfterTheNextTimeText
     }
+    
+    override func viewDidLoad() {
+        self.view.backgroundColor = UIColor.colorWithHexString("2e2e2e")
+        self.navigationItem.title = "上賀茂神社行き"
+        Timer.scheduledTimer(withTimeInterval: 0.9, repeats: true) {_ in
+            self.initialize()
+        }
+    }
 }
+
+

@@ -46,7 +46,7 @@ class KokusaiViewController: BusTimerViewController {
         return mixLabel
     }
     
-    func kokusai(){
+    private func initialize(){
         let date = Date()
         let calendar = Calendar.current
         let hour = calendar.component(.hour, from: date)
@@ -76,5 +76,13 @@ class KokusaiViewController: BusTimerViewController {
         self.kokusaiCountTime?.text = mixLabel.countTimeText
         self.kokusaiAfterTheNextLabel?.text = mixLabel.AfterTheNextTimeLabelText
         self.kokusaiAfterTheNextTime?.text = mixLabel.AfterTheNextTimeText
+    }
+    
+    override func viewDidLoad() {
+        self.view.backgroundColor = UIColor.colorWithHexString("2e2e2e")
+        self.navigationItem.title = "国際会館行き"
+        Timer.scheduledTimer(withTimeInterval: 0.9, repeats: true) {_ in
+            self.initialize()
+        }
     }
 }

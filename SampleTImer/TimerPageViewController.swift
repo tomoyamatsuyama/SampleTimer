@@ -7,30 +7,75 @@
 //
 
 import UIKit
+import Foundation
 
 class TimerPageViewController: UIPageViewController, UIPageViewControllerDataSource {
+    let idList = ["Kamigamo", "Niken", "Kita", "Kokusai"]
+    var viewControllerList: [UIViewController] = []
     
-    let kamigamo = KamigamoViewController()
-    let niken = NikenViewController()
-    let kita = KitaViewController()
-    let kokusai = KokusaiViewController()
+    enum BusName: Int{
+        case kamigamo = 0
+        case niken = 1
+        case kita = 2
+        case kokusai = 3
+    }
     
-    let idList = ["Kamigamo","Niken", "Kita", "Kokusai"]
-    var pageCount: Int = 0
+    func navigationSet(index: Int){
+        switch index {
+        case BusName.kamigamo.rawValue:
+            self.navigationItem.title = "上賀茂神社行き"
+        case BusName.niken.rawValue:
+            self.navigationItem.title = "二軒茶屋行き"
+        case BusName.kita.rawValue:
+            self.navigationItem.title = "北大路BT行き"
+        case BusName.kokusai.rawValue:
+            self.navigationItem.title = "国際会館行き"
+        default:
+            self.navigationItem.title = "上賀茂神社行き"
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let kamigamo: KamigamoViewController = storyboard!.instantiateViewController(withIdentifier: "Kamigamo") as! KamigamoViewController
+        let niken: NikenViewController = storyboard!.instantiateViewController(withIdentifier: "Niken") as! NikenViewController
+        let kita: KitaViewController = storyboard!.instantiateViewController(withIdentifier: "Kita") as! KitaViewController
+        let kokusai: KokusaiViewController = storyboard!.instantiateViewController(withIdentifier: "Kokusai") as! KokusaiViewController
+        viewControllerList = [kamigamo, niken, kita, kokusai]
+        
+        self.setViewControllers([viewControllerList[0]], direction: .forward, animated: true, completion:nil)
+        self.dataSource = self
+        
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        let index = idList.index(of: viewController.restorationIdentifier!)!
-        if index > 0 {
-            print(pageCount)
-            return storyboard!.instantiateViewController(withIdentifier: idList[index - 1])
+        
+        if let viewControllerRestrationIdentifer = viewController.restorationIdentifier {
+            if let index = idList.index(of: viewControllerRestrationIdentifer){
+                if index > 0 {
+                    navigationSet(index: index)
+                    return viewControllerList[index - 1]
+                }
+                navigationSet(index: index)
+            }
         }
         return nil
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        let index = idList.index(of: viewController.restorationIdentifier!)!
-        if index < idList.count - 1 {
-            return storyboard!.instantiateViewController(withIdentifier: idList[index + 1])
+        
+        if let viewControllerRestrationIdentifer = viewController.restorationIdentifier {
+            if let index = idList.index(of: viewControllerRestrationIdentifer){
+                if index < idList.count - 1 {
+                    navigationSet(index: index)
+                    return viewControllerList[index + 1]
+                }
+                navigationSet(index: index)
+            }
         }
         return nil
     }
@@ -41,24 +86,5 @@ class TimerPageViewController: UIPageViewController, UIPageViewControllerDataSou
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
         return 0
-    }
-
-    @objc func selectBus(timer: Timer){
-        kamigamo.kamigamo()
-        niken.niken()
-        kita.kita()
-        kokusai.kokusai()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        let controller = storyboard!.instantiateViewController(withIdentifier: idList.first!)
-        self.setViewControllers([controller], direction: .forward, animated: true, completion:nil)
-        self.dataSource = self
-        Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(TimerPageViewController.selectBus(timer:)), userInfo: nil, repeats: true)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
 }
