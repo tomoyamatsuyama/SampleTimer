@@ -16,7 +16,6 @@ class KamigamoViewController: BusTimerViewController {
     @IBOutlet private weak var KamigamoAfterTheNextLabel: UILabel!
     @IBOutlet private weak var KamigamoAfterTheNextTime: UILabel!
     
-    
     private func weekAndWedCalclation(notInServiceHour: Int = 21, lastBusHour: Int = 20, lastBusCountTime: Int = 59, lastBusTime: String = "21:00", _ hour: Int, _ inputMixLabel: BusLabels, _ minute: Int, _ printsec: Int, busType: Int) -> BusLabels {
         
         var mixLabel = inputMixLabel

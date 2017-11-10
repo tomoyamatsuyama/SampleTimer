@@ -14,6 +14,7 @@
         <scene sceneID="qbc-Yp-SXb">
             <objects>
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="oU1-xu-JVX" customClass="TimerPageViewController" customModule="SampleTImer" customModuleProvider="target" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="上賀茂神社行き" id="Uth-4G-7eL"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y49-aD-BqW" userLabel="First Responder" sceneMemberID="firstResponder"/>

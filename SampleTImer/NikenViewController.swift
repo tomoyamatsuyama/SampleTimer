@@ -132,7 +132,6 @@ class NikenViewController: BusTimerViewController {
         self.nikenAfterTheNextLabel?.text = mixLabel.AfterTheNextTimeLabelText
         self.nikenAfterTheNextTime?.text = mixLabel.AfterTheNextTimeText
         self.nikenAfterTheNextTime?.numberOfLines = 0
-        
     }
     
     override func viewDidLoad() {

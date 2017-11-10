@@ -83,6 +83,7 @@ class KitaViewController: BusTimerViewController{
         self.kitaAfterTheNextTime?.text = mixLabel.AfterTheNextTimeText
         self.kitaAfterTheNextTime?.numberOfLines = 0
     }
+    
     override func viewDidLoad() {
         self.view.backgroundColor = UIColor.colorWithHexString("53B176")
         Timer.scheduledTimer(withTimeInterval: 0.9, repeats: true) {_ in
