@@ -12,7 +12,7 @@ import Foundation
 extension UIColor {
     static func colorWithHexString (_ hex: String) -> UIColor {
         let cString = hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
-        if ((cString as String).characters.count != 6) {
+        if ((cString as String).count != 6) {
             return UIColor.gray
         }
         let rString = (cString as NSString).substring(with: NSRange(location: 0, length: 2))
@@ -76,30 +76,30 @@ class BusTimerViewController: UIViewController {
         countTime = labelCountdown(countmin, printsec)
         if printhour < 10 {
             if printNextMin < 10 {
-                nextTime = "次は\(printhour):0\(printNextMin)発"
+                nextTime = "\(printhour):0\(printNextMin)発 到着まで"
             } else {
-                nextTime = "次は\(printhour):\(printNextMin)発"
+                nextTime = "\(printhour):\(printNextMin)発 到着まで"
             }
         } else {
             if printNextMin < 10 {
-                nextTime = "次は\(printhour):0\(printNextMin)発"
+                nextTime = "\(printhour):0\(printNextMin)発 到着まで"
             } else {
-                nextTime = "次は\(printhour):\(printNextMin)発"
+                nextTime = "\(printhour):\(printNextMin)発 到着まで"
             }
         }
         AfterTheNextTimeLabel = "その次のバスは"
         
         if print2ndMin < 10 {
-            AfterTheNextTime = "\(print2ndhour)時0\(print2ndMin)分"
+            AfterTheNextTime = "\(print2ndhour)時0\(print2ndMin)分発"
         } else{
-            AfterTheNextTime = "\(print2ndhour)時\(print2ndMin)分"
+            AfterTheNextTime = "\(print2ndhour)時\(print2ndMin)分発"
         }
         return BusLabels(nextTimeText: nextTime, countTimeText: countTime, AfterTheNextTimeLabelText: AfterTheNextTimeLabel, AfterTheNextTimeText: AfterTheNextTime)
     }
     
     func lastBus(_ countmin: Int, _ time: String, _ printsec: Int) -> BusLabels{
         countTime = labelCountdown(countmin, printsec)
-        nextTime = "最終バス\n\(time)発まで"
+        nextTime = "最終バス\n\(time)発 到着まで"
         AfterTheNextTimeLabel = " "
         AfterTheNextTime = " "
         return BusLabels(nextTimeText: nextTime, countTimeText: countTime, AfterTheNextTimeLabelText: AfterTheNextTimeLabel, AfterTheNextTimeText: AfterTheNextTime)
@@ -107,11 +107,19 @@ class BusTimerViewController: UIViewController {
     
     func nikenCirculation(_ countmin: Int, time: String, _ printsec: Int, nextTimeTable: String) -> BusLabels {
         countTime = labelCountdown(countmin, printsec)
-        nextTime = "次は\(time)発"
+        nextTime = "次の\(time)発 到着まで"
         AfterTheNextTimeLabel = "次\(nextTimeTable)は"
         AfterTheNextTime = "約5~10分おきに\n運行します"
         
         return BusLabels(nextTimeText: nextTime, countTimeText: countTime, AfterTheNextTimeLabelText: AfterTheNextTimeLabel, AfterTheNextTimeText: AfterTheNextTime)
 
+    }
+    
+    func labelFontSet(_ countTimeLabel: UILabel) -> UILabel {
+        let attrLabel = NSMutableAttributedString(string: countTimeLabel.text!)
+        attrLabel.addAttribute(NSAttributedStringKey.font, value: UIFont.systemFont(ofSize: 65), range: NSMakeRange(0, 2))
+        attrLabel.addAttribute(NSAttributedStringKey.font, value: UIFont.systemFont(ofSize: 65), range: NSMakeRange(3, 2))
+        countTimeLabel.attributedText = attrLabel
+        return countTimeLabel
     }
 }

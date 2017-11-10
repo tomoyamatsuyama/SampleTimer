@@ -126,15 +126,17 @@ class NikenViewController: BusTimerViewController {
         }
        
         self.nikenNextTimeLabel?.text = mixLabel.nextTimeText
+        self.nikenNextTimeLabel?.numberOfLines = 0
         self.nikenCountTime?.text = mixLabel.countTimeText
+        labelFontSet(self.nikenCountTime)
         self.nikenAfterTheNextLabel?.text = mixLabel.AfterTheNextTimeLabelText
         self.nikenAfterTheNextTime?.text = mixLabel.AfterTheNextTimeText
+        self.nikenAfterTheNextTime?.numberOfLines = 0
         
     }
     
     override func viewDidLoad() {
-        self.view.backgroundColor = UIColor.colorWithHexString("2e2e2e")
-        self.navigationItem.title = "二軒茶屋行き"
+        self.view.backgroundColor = UIColor.colorWithHexString("53B176")
         Timer.scheduledTimer(withTimeInterval: 0.9, repeats: true) {_ in
             self.initialize()
         }

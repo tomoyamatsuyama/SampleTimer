@@ -6,9 +6,9 @@
 //  Copyright © 2017年 Tomoya Matsuyama. All rights reserved.
 //
 //
+
 import UIKit
 import Foundation
-
 
 class TimeTable{
     

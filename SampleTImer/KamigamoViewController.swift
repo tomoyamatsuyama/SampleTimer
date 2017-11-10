@@ -37,7 +37,7 @@ class KamigamoViewController: BusTimerViewController {
             } else if arrayTime.count == busTimeCategories.count + 1 {
                 mixLabel = makeLabel(hour, hour + 1, arrayTime[busTimeCategories.count], arrayNextTime[0], 59 - arrayTime[busTimeCategories.count], printsec)
             } else {
-                mixLabel = makeLabel(hour, hour, arrayTime[busTimeCategories.count], arrayTime[busTimeCategories.count + 1], 59 - arrayTime[busTimeCategories.count], printsec)
+                mixLabel = makeLabel(hour, hour, arrayTime[busTimeCategories.count], arrayTime[busTimeCategories.count + 1], arrayTime[busTimeCategories.count] - (minute + 1), printsec)
             }
         }
         return mixLabel
@@ -80,17 +80,18 @@ class KamigamoViewController: BusTimerViewController {
                 mixLabel = weekAndWedCalclation(hour, mixLabel, minute, printsec, busType: 0)
             }
         }
-        
         self.kamigamoNextTimeLabel?.text = mixLabel.nextTimeText
+        self.kamigamoNextTimeLabel?.numberOfLines = 0
         self.KamigamoCountTime?.text = mixLabel.countTimeText
+        labelFontSet(self.KamigamoCountTime)
         self.KamigamoAfterTheNextLabel?.text = mixLabel.AfterTheNextTimeLabelText
         self.KamigamoAfterTheNextTime?.text = mixLabel.AfterTheNextTimeText
+        self.KamigamoAfterTheNextTime?.numberOfLines = 0
     }
     
     override func viewDidLoad() {
-        self.view.backgroundColor = UIColor.colorWithHexString("2e2e2e")
-        self.navigationItem.title = "上賀茂神社行き"
-        Timer.scheduledTimer(withTimeInterval: 0.9, repeats: true) {_ in
+        self.view.backgroundColor = UIColor.colorWithHexString("53B176")
+        Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) {_ in
             self.initialize()
         }
     }

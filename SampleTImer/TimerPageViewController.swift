@@ -9,26 +9,38 @@
 import UIKit
 import Foundation
 
-class TimerPageViewController: UIPageViewController, UIPageViewControllerDataSource {
-    let idList = ["Kamigamo", "Niken", "Kita", "Kokusai"]
-    var viewControllerList: [UIViewController] = []
+class TimerPageViewController: UIPageViewController {
+    var viewControllersList: [UIViewController] = []
     
-    enum BusName: Int{
-        case kamigamo = 0
-        case niken = 1
-        case kita = 2
-        case kokusai = 3
+    enum BusName: Int {
+        case kamigamo
+        case niken
+        case kita
+        case kokusai
+        
+        var index: Int {
+            switch self {
+            case .kamigamo:
+                return 0
+            case .niken:
+                return 1
+            case .kita:
+                return 2
+            case .kokusai:
+                return 3
+            }
+        }
     }
     
     func navigationSet(index: Int){
         switch index {
-        case BusName.kamigamo.rawValue:
+        case BusName.kamigamo.index:
             self.navigationItem.title = "上賀茂神社行き"
-        case BusName.niken.rawValue:
+        case BusName.niken.index:
             self.navigationItem.title = "二軒茶屋行き"
-        case BusName.kita.rawValue:
+        case BusName.kita.index:
             self.navigationItem.title = "北大路BT行き"
-        case BusName.kokusai.rawValue:
+        case BusName.kokusai.index:
             self.navigationItem.title = "国際会館行き"
         default:
             self.navigationItem.title = "上賀茂神社行き"
@@ -41,47 +53,38 @@ class TimerPageViewController: UIPageViewController, UIPageViewControllerDataSou
         let niken: NikenViewController = storyboard!.instantiateViewController(withIdentifier: "Niken") as! NikenViewController
         let kita: KitaViewController = storyboard!.instantiateViewController(withIdentifier: "Kita") as! KitaViewController
         let kokusai: KokusaiViewController = storyboard!.instantiateViewController(withIdentifier: "Kokusai") as! KokusaiViewController
-        viewControllerList = [kamigamo, niken, kita, kokusai]
+        viewControllersList = [kamigamo, niken, kita, kokusai]
         
-        self.setViewControllers([viewControllerList[0]], direction: .forward, animated: true, completion:nil)
-        self.dataSource = self
-        
+        self.setViewControllers([viewControllersList[0]], direction: .forward, animated: true, completion:nil)
+        dataSource = self
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
+}
+
+extension TimerPageViewController: UIPageViewControllerDataSource{
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        
-        if let viewControllerRestrationIdentifer = viewController.restorationIdentifier {
-            if let index = idList.index(of: viewControllerRestrationIdentifer){
-                if index > 0 {
-                    navigationSet(index: index)
-                    return viewControllerList[index - 1]
-                }
+        if let index = viewControllersList.index(of: viewController){
+            if index > 0 {
                 navigationSet(index: index)
+                return viewControllersList[index - 1]
             }
+            navigationSet(index: index)
         }
         return nil
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        
-        if let viewControllerRestrationIdentifer = viewController.restorationIdentifier {
-            if let index = idList.index(of: viewControllerRestrationIdentifer){
-                if index < idList.count - 1 {
-                    navigationSet(index: index)
-                    return viewControllerList[index + 1]
-                }
+        if let index = viewControllersList.index(of: viewController){
+            if index < viewControllersList.count - 1 {
                 navigationSet(index: index)
+                return viewControllersList[index + 1]
             }
+            navigationSet(index: index)
         }
         return nil
     }
     
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return idList.count
+        return viewControllersList.count
     }
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {

@@ -42,7 +42,7 @@ class KitaViewController: BusTimerViewController{
                     mixLabel = makeLabel(hour, hour + 1, arrayTime[busTimeCategories.count], arrayNextTime[0], 59 - arrayTime[busTimeCategories.count], printsec)
                 }
             } else {
-                mixLabel = makeLabel(hour, hour, arrayTime[busTimeCategories.count], arrayTime[busTimeCategories.count + 1], 59 - arrayTime[busTimeCategories.count], printsec)
+                mixLabel = makeLabel(hour, hour, arrayTime[busTimeCategories.count], arrayTime[busTimeCategories.count + 1], arrayTime[busTimeCategories.count] - (minute + 1), printsec)
                 
             }
         }
@@ -76,13 +76,15 @@ class KitaViewController: BusTimerViewController{
         }
         
         self.kitaNextTimeLabel?.text = mixLabel.nextTimeText
+        self.kitaNextTimeLabel?.numberOfLines = 0
         self.kitaCountTime?.text = mixLabel.countTimeText
+        labelFontSet(self.kitaCountTime)
         self.kitaAfterTheNextLabel?.text = mixLabel.AfterTheNextTimeLabelText
         self.kitaAfterTheNextTime?.text = mixLabel.AfterTheNextTimeText
+        self.kitaAfterTheNextTime?.numberOfLines = 0
     }
     override func viewDidLoad() {
-        self.view.backgroundColor = UIColor.colorWithHexString("2e2e2e")
-        self.navigationItem.title = "北大路BT行き"
+        self.view.backgroundColor = UIColor.colorWithHexString("53B176")
         Timer.scheduledTimer(withTimeInterval: 0.9, repeats: true) {_ in
             self.initialize()
         }

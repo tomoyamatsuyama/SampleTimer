@@ -40,7 +40,7 @@ class KokusaiViewController: BusTimerViewController {
                     mixLabel = makeLabel(hour, hour + 1, arrayTime[busTimeCategories.count], arrayNextTime[0], 59 - arrayTime[busTimeCategories.count], printsec)
                 }
             } else {
-                mixLabel = makeLabel(hour, hour, arrayTime[busTimeCategories.count], arrayTime[busTimeCategories.count + 1], 59 - arrayTime[busTimeCategories.count], printsec)
+                mixLabel = makeLabel(hour, hour, arrayTime[busTimeCategories.count], arrayTime[busTimeCategories.count + 1], arrayTime[busTimeCategories.count] - (minute + 1), printsec)
             }
         }
         return mixLabel
@@ -73,14 +73,16 @@ class KokusaiViewController: BusTimerViewController {
         }
         
         self.kokusaiNextTimeLabel?.text = mixLabel.nextTimeText
+        self.kokusaiNextTimeLabel?.numberOfLines = 0
         self.kokusaiCountTime?.text = mixLabel.countTimeText
+        labelFontSet(self.kokusaiCountTime)
         self.kokusaiAfterTheNextLabel?.text = mixLabel.AfterTheNextTimeLabelText
         self.kokusaiAfterTheNextTime?.text = mixLabel.AfterTheNextTimeText
+        self.kokusaiAfterTheNextTime?.numberOfLines = 0
     }
     
     override func viewDidLoad() {
-        self.view.backgroundColor = UIColor.colorWithHexString("2e2e2e")
-        self.navigationItem.title = "国際会館行き"
+        self.view.backgroundColor = UIColor.colorWithHexString("53B176")
         Timer.scheduledTimer(withTimeInterval: 0.9, repeats: true) {_ in
             self.initialize()
         }

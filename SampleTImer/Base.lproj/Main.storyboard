@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cng-8B-R1G">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cng-8B-R1G">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -28,41 +28,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="次は00:00発" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ya-Em-0Ro" userLabel="kamigamoNextTimeLabel">
-                                <rect key="frame" x="115.5" y="80" width="145" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00発 到着まで" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ya-Em-0Ro" userLabel="kamigamoNextTimeLabel">
+                                <rect key="frame" x="40" y="50" width="201" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00分00秒後" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZL-54-jho" userLabel="KamigamoCountTime">
-                                <rect key="frame" x="102.5" y="155" width="171" height="37"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="119" y="95" width="138.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="その次のバスは" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sk8-Nb-SrS" userLabel="KamigamoAfterTheNextLabel">
-                                <rect key="frame" x="99.5" y="237" width="177.5" height="30"/>
+                                <rect key="frame" x="40" y="165" width="177.5" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00時00発" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Beb-R9-Gab" userLabel="KamigamoAfterTheNextTime">
-                                <rect key="frame" x="131" y="312" width="113" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="118" y="220" width="139.5" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Beb-R9-Gab" firstAttribute="top" secondItem="Sk8-Nb-SrS" secondAttribute="bottom" constant="45" id="7fm-88-ZRy"/>
-                            <constraint firstItem="Sk8-Nb-SrS" firstAttribute="centerX" secondItem="npu-E8-b00" secondAttribute="centerX" id="Abw-4I-XUB"/>
-                            <constraint firstItem="4ya-Em-0Ro" firstAttribute="top" secondItem="KFy-FM-Bqd" secondAttribute="top" constant="60" id="DSM-ko-VMh"/>
-                            <constraint firstItem="Sk8-Nb-SrS" firstAttribute="top" secondItem="MZL-54-jho" secondAttribute="bottom" constant="45" id="KNe-4m-XyH"/>
+                            <constraint firstItem="4ya-Em-0Ro" firstAttribute="leading" secondItem="KFy-FM-Bqd" secondAttribute="leading" constant="40" id="7Oh-r0-rbu"/>
+                            <constraint firstItem="Beb-R9-Gab" firstAttribute="top" secondItem="Sk8-Nb-SrS" secondAttribute="bottom" constant="25" id="7fm-88-ZRy"/>
+                            <constraint firstItem="Sk8-Nb-SrS" firstAttribute="leading" secondItem="npu-E8-b00" secondAttribute="leading" constant="40" id="Abw-4I-XUB"/>
+                            <constraint firstItem="4ya-Em-0Ro" firstAttribute="top" secondItem="KFy-FM-Bqd" secondAttribute="top" constant="30" id="DSM-ko-VMh"/>
+                            <constraint firstItem="Sk8-Nb-SrS" firstAttribute="top" secondItem="MZL-54-jho" secondAttribute="bottom" constant="40" id="KNe-4m-XyH"/>
                             <constraint firstItem="MZL-54-jho" firstAttribute="centerX" secondItem="npu-E8-b00" secondAttribute="centerX" id="cCp-fE-aJa"/>
-                            <constraint firstItem="4ya-Em-0Ro" firstAttribute="centerX" secondItem="npu-E8-b00" secondAttribute="centerX" id="fr4-77-C1w"/>
                             <constraint firstItem="Beb-R9-Gab" firstAttribute="centerX" secondItem="npu-E8-b00" secondAttribute="centerX" id="usf-Mv-ahq"/>
-                            <constraint firstItem="MZL-54-jho" firstAttribute="top" secondItem="4ya-Em-0Ro" secondAttribute="bottom" constant="45" id="xfV-YQ-6WP"/>
+                            <constraint firstItem="MZL-54-jho" firstAttribute="top" secondItem="4ya-Em-0Ro" secondAttribute="bottom" constant="15" id="xfV-YQ-6WP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KFy-FM-Bqd"/>
                     </view>
@@ -85,41 +85,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="次は00:00発" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHr-D9-oN4" userLabel="nikenNextTimeLabel">
-                                <rect key="frame" x="115" y="80" width="145" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00発 到着まで" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHr-D9-oN4" userLabel="nikenNextTimeLabel">
+                                <rect key="frame" x="40" y="60" width="201" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00分00秒後" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0E-xV-QI5" userLabel="nikenCountTime">
-                                <rect key="frame" x="102" y="155" width="171" height="37"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <rect key="frame" x="118.5" y="105" width="138.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="その次のバスは" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5im-GD-Lfa" userLabel="nikenAfterTheNextLabel">
-                                <rect key="frame" x="99.5" y="237" width="177.5" height="30"/>
+                                <rect key="frame" x="40" y="175" width="177.5" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00時00分発" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huH-q8-gnB" userLabel="nikenAfterTheNextTime">
-                                <rect key="frame" x="118.5" y="312" width="138.5" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <rect key="frame" x="102.5" y="230" width="171" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="G0E-xV-QI5" firstAttribute="top" secondItem="ZHr-D9-oN4" secondAttribute="bottom" constant="45" id="Jkl-eK-sNd"/>
-                            <constraint firstItem="5im-GD-Lfa" firstAttribute="top" secondItem="G0E-xV-QI5" secondAttribute="bottom" constant="45" id="R3b-NO-Fw5"/>
-                            <constraint firstItem="5im-GD-Lfa" firstAttribute="centerX" secondItem="UBS-59-AtZ" secondAttribute="centerX" id="UPd-WE-T5V"/>
+                            <constraint firstItem="G0E-xV-QI5" firstAttribute="top" secondItem="ZHr-D9-oN4" secondAttribute="bottom" constant="15" id="Jkl-eK-sNd"/>
+                            <constraint firstItem="5im-GD-Lfa" firstAttribute="top" secondItem="G0E-xV-QI5" secondAttribute="bottom" constant="40" id="R3b-NO-Fw5"/>
+                            <constraint firstItem="5im-GD-Lfa" firstAttribute="leading" secondItem="UBS-59-AtZ" secondAttribute="leading" constant="40" id="UPd-WE-T5V"/>
                             <constraint firstItem="huH-q8-gnB" firstAttribute="centerX" secondItem="UBS-59-AtZ" secondAttribute="centerX" id="dnN-iQ-kJA"/>
-                            <constraint firstItem="ZHr-D9-oN4" firstAttribute="centerX" secondItem="UBS-59-AtZ" secondAttribute="centerX" id="nKb-RN-sgt"/>
-                            <constraint firstItem="ZHr-D9-oN4" firstAttribute="top" secondItem="vHD-2U-7eo" secondAttribute="top" constant="60" id="o0O-ch-tak"/>
+                            <constraint firstItem="ZHr-D9-oN4" firstAttribute="leading" secondItem="vHD-2U-7eo" secondAttribute="leading" constant="40" id="nKb-RN-sgt"/>
+                            <constraint firstItem="ZHr-D9-oN4" firstAttribute="top" secondItem="vHD-2U-7eo" secondAttribute="top" constant="40" id="o0O-ch-tak"/>
                             <constraint firstItem="G0E-xV-QI5" firstAttribute="centerX" secondItem="UBS-59-AtZ" secondAttribute="centerX" id="y8c-gR-9EZ"/>
-                            <constraint firstItem="huH-q8-gnB" firstAttribute="top" secondItem="5im-GD-Lfa" secondAttribute="bottom" constant="45" id="ye6-Od-hEG"/>
+                            <constraint firstItem="huH-q8-gnB" firstAttribute="top" secondItem="5im-GD-Lfa" secondAttribute="bottom" constant="25" id="ye6-Od-hEG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vHD-2U-7eo"/>
                     </view>
@@ -142,40 +142,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="次は00:00発" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r23-ej-huq" userLabel="kitaNextTimeLabel">
-                                <rect key="frame" x="115" y="80" width="145" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00発 到着まで" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r23-ej-huq" userLabel="kitaNextTimeLabel">
+                                <rect key="frame" x="40" y="60" width="201" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00分00秒後" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7d-7B-sKM" userLabel="kitaCountTime">
-                                <rect key="frame" x="102.5" y="155" width="171" height="37"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <rect key="frame" x="119" y="115" width="138.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="その次のバスは" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X1K-qG-NfU" userLabel="kitaAfterTheNextLabel">
-                                <rect key="frame" x="99" y="237" width="177.5" height="30"/>
+                                <rect key="frame" x="40" y="185" width="177.5" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00時00分発" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLR-17-sxp" userLabel="kitaAfterTheNextTime">
-                                <rect key="frame" x="118.5" y="312" width="138.5" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <rect key="frame" x="102.5" y="240" width="171" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="X1K-qG-NfU" firstAttribute="top" secondItem="c7d-7B-sKM" secondAttribute="bottom" constant="45" id="2W4-dT-iyh"/>
-                            <constraint firstItem="X1K-qG-NfU" firstAttribute="centerX" secondItem="SBy-a5-h0i" secondAttribute="centerX" id="3He-cg-5yF"/>
-                            <constraint firstItem="c7d-7B-sKM" firstAttribute="top" secondItem="r23-ej-huq" secondAttribute="bottom" constant="45" id="GLN-FX-N0S"/>
-                            <constraint firstItem="dLR-17-sxp" firstAttribute="top" secondItem="X1K-qG-NfU" secondAttribute="bottom" constant="45" id="RaQ-Mh-RuV"/>
+                            <constraint firstItem="X1K-qG-NfU" firstAttribute="top" secondItem="c7d-7B-sKM" secondAttribute="bottom" constant="40" id="2W4-dT-iyh"/>
+                            <constraint firstItem="X1K-qG-NfU" firstAttribute="leading" secondItem="SBy-a5-h0i" secondAttribute="leading" constant="40" id="3He-cg-5yF"/>
+                            <constraint firstItem="c7d-7B-sKM" firstAttribute="top" secondItem="r23-ej-huq" secondAttribute="bottom" constant="25" id="GLN-FX-N0S"/>
+                            <constraint firstItem="dLR-17-sxp" firstAttribute="top" secondItem="X1K-qG-NfU" secondAttribute="bottom" constant="25" id="RaQ-Mh-RuV"/>
                             <constraint firstItem="dLR-17-sxp" firstAttribute="centerX" secondItem="SBy-a5-h0i" secondAttribute="centerX" id="WCh-EX-nIK"/>
-                            <constraint firstItem="r23-ej-huq" firstAttribute="top" secondItem="tlW-Lr-uOj" secondAttribute="top" constant="60" id="b5N-AR-xct"/>
-                            <constraint firstItem="r23-ej-huq" firstAttribute="centerX" secondItem="SBy-a5-h0i" secondAttribute="centerX" id="iJd-sN-7Ih"/>
+                            <constraint firstItem="r23-ej-huq" firstAttribute="top" secondItem="tlW-Lr-uOj" secondAttribute="top" constant="40" id="b5N-AR-xct"/>
+                            <constraint firstItem="r23-ej-huq" firstAttribute="leading" secondItem="SBy-a5-h0i" secondAttribute="leading" constant="40" id="iJd-sN-7Ih"/>
                             <constraint firstItem="c7d-7B-sKM" firstAttribute="centerX" secondItem="SBy-a5-h0i" secondAttribute="centerX" id="kfW-fT-LFq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tlW-Lr-uOj"/>
@@ -199,40 +199,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="次のバスは00:00発" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rTH-Ag-4rQ" userLabel="kokusaiNextTimeLabel">
-                                <rect key="frame" x="77.5" y="80" width="221" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00発 到着まで" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rTH-Ag-4rQ" userLabel="kokusaiNextTimeLabel">
+                                <rect key="frame" x="40" y="60" width="201" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00分00秒後" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LvA-tN-aZv" userLabel="kokusaiCountTime">
-                                <rect key="frame" x="102" y="155" width="171" height="37"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="118.5" y="115" width="138.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="その次のバスは" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iyf-tF-sIe" userLabel="kokusaiAfterTheNextLabel">
-                                <rect key="frame" x="99.5" y="237" width="177.5" height="30"/>
+                                <rect key="frame" x="40" y="185" width="177.5" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00時00分発" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HFu-44-UFo" userLabel="kokusaiAfterTheNextTime">
-                                <rect key="frame" x="118.5" y="312" width="138.5" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="102.5" y="240" width="171" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="LvA-tN-aZv" firstAttribute="top" secondItem="rTH-Ag-4rQ" secondAttribute="bottom" constant="45" id="9g3-un-s21"/>
-                            <constraint firstItem="Iyf-tF-sIe" firstAttribute="centerX" secondItem="ylC-zg-62x" secondAttribute="centerX" id="LjS-n7-X5X"/>
-                            <constraint firstItem="HFu-44-UFo" firstAttribute="top" secondItem="Iyf-tF-sIe" secondAttribute="bottom" constant="45" id="SIS-vG-Emb"/>
+                            <constraint firstItem="LvA-tN-aZv" firstAttribute="top" secondItem="rTH-Ag-4rQ" secondAttribute="bottom" constant="25" id="9g3-un-s21"/>
+                            <constraint firstItem="Iyf-tF-sIe" firstAttribute="leading" secondItem="ylC-zg-62x" secondAttribute="leading" constant="40" id="LjS-n7-X5X"/>
+                            <constraint firstItem="HFu-44-UFo" firstAttribute="top" secondItem="Iyf-tF-sIe" secondAttribute="bottom" constant="25" id="SIS-vG-Emb"/>
                             <constraint firstItem="HFu-44-UFo" firstAttribute="centerX" secondItem="ylC-zg-62x" secondAttribute="centerX" id="ckR-D0-mEy"/>
-                            <constraint firstItem="Iyf-tF-sIe" firstAttribute="top" secondItem="LvA-tN-aZv" secondAttribute="bottom" constant="45" id="d3k-kV-tX1"/>
-                            <constraint firstItem="rTH-Ag-4rQ" firstAttribute="centerX" secondItem="ylC-zg-62x" secondAttribute="centerX" id="lw8-jr-aWn"/>
-                            <constraint firstItem="rTH-Ag-4rQ" firstAttribute="top" secondItem="5fd-wj-ZyX" secondAttribute="top" constant="60" id="wsi-MJ-ajp"/>
+                            <constraint firstItem="Iyf-tF-sIe" firstAttribute="top" secondItem="LvA-tN-aZv" secondAttribute="bottom" constant="40" id="d3k-kV-tX1"/>
+                            <constraint firstItem="rTH-Ag-4rQ" firstAttribute="leading" secondItem="ylC-zg-62x" secondAttribute="leading" constant="40" id="lw8-jr-aWn"/>
+                            <constraint firstItem="rTH-Ag-4rQ" firstAttribute="top" secondItem="5fd-wj-ZyX" secondAttribute="top" constant="40" id="wsi-MJ-ajp"/>
                             <constraint firstItem="LvA-tN-aZv" firstAttribute="centerX" secondItem="ylC-zg-62x" secondAttribute="centerX" id="xQo-gG-pA5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5fd-wj-ZyX"/>
