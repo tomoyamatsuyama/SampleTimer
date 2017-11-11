@@ -158,8 +158,6 @@ class Purse{
                 arrayTable = timeTable.kamigamoWeek.twenty
             } else if hour == 21 {
                 arrayTable = timeTable.kamigamoWeek.twentyOne
-            } else {
-                print("バス終了")
             }
         case BusType.kamigamoWed.rawValue:
             if hour == 9 {
@@ -188,8 +186,6 @@ class Purse{
                 arrayTable = timeTable.kamigamoWed.twenty
             } else if hour == 21 {
                 arrayTable = timeTable.kamigamoWed.twentyOne
-            } else {
-                print("バス終了")
             }
         
         case BusType.kamigamoSat.rawValue:
@@ -203,8 +199,6 @@ class Purse{
                 arrayTable = timeTable.kamigamoSat.twelve
             } else if hour == 13 {
                 arrayTable = timeTable.kamigamoSat.thirteen
-            }else {
-                print("バス終了")
             }
             
         case BusType.nikenWeek.rawValue:
@@ -234,8 +228,6 @@ class Purse{
                 arrayTable = timeTable.nikenWeek.nineteen
             } else if hour == 20 {
                 arrayTable = timeTable.nikenWeek.twenty
-            } else {
-                print("バス終了")
             }
             
         case BusType.nikenWed.rawValue:
@@ -265,8 +257,6 @@ class Purse{
                 arrayTable = timeTable.nikenWed.nineteen
             } else if hour == 20 {
                 arrayTable = timeTable.nikenWed.twenty
-            } else {
-                print("バス終了")
             }
             
         case BusType.nikenSat.rawValue:
@@ -280,8 +270,6 @@ class Purse{
                 arrayTable = timeTable.kamigamoSat.twelve
             } else if hour == 13 {
                 arrayTable = timeTable.kamigamoSat.thirteen
-            } else {
-                print("バス終了")
             }
             
         case BusType.kitaWeek.rawValue:
@@ -319,9 +307,8 @@ class Purse{
                 arrayTable = timeTable.kitaWeek.twentyOne
             } else if hour == 22 {
                 arrayTable = timeTable.kitaWeek.twentyTwo
-            } else {
-                print("バス終了")
             }
+            
         case BusType.kitaHoliday.rawValue:
             if hour == 6 {
                 arrayTable = timeTable.kitaHoliday.six
@@ -357,8 +344,6 @@ class Purse{
                 arrayTable = timeTable.kitaHoliday.twentyOne
             } else if hour == 22 {
                 arrayTable = timeTable.kitaHoliday.twentyTwo
-            } else {
-                print("バス終了")
             }
             
         case BusType.kokusaiA.rawValue:
@@ -396,9 +381,8 @@ class Purse{
                 arrayTable = timeTable.kokusaiA.twentyTwo
             } else if hour == 23 {
                 arrayTable = timeTable.kokusaiA.twentyThree
-            } else {
-                print("バス終了")
             }
+            
         case BusType.kokusaiB.rawValue:
             if hour == 7 {
                 arrayTable = timeTable.kokusaiB.seven
@@ -434,9 +418,8 @@ class Purse{
                 arrayTable = timeTable.kokusaiB.twentyTwo
             } else if hour == 23 {
                 arrayTable = timeTable.kokusaiB.twentyThree
-            } else {
-                print("バス終了")
             }
+            
         case BusType.kokusaiC.rawValue:
             if hour == 7 {
                 arrayTable = timeTable.kokusaiC.seven
@@ -472,9 +455,8 @@ class Purse{
                 arrayTable = timeTable.kokusaiC.twentyTwo
             } else if hour == 23 {
                 arrayTable = timeTable.kokusaiC.twentyThree
-            } else {
-                print("バス終了")
             }
+            
         case BusType.kokusaiD.rawValue:
             if hour == 7 {
                 arrayTable = timeTable.kokusaiD.seven
@@ -510,8 +492,6 @@ class Purse{
                 arrayTable = timeTable.kokusaiD.twentyTwo
             } else if hour == 23 {
                 arrayTable = timeTable.kokusaiD.twentyThree
-            } else {
-                print("バス終了")
             }
             
         default:

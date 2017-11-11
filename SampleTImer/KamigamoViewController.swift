@@ -70,8 +70,13 @@ class KamigamoViewController: BusTimerViewController {
             }
 
         case BusSelect.Sat.rawValue:
-            mixLabel = weekAndWedCalclation(notInServiceHour: 14, lastBusHour: 12, lastBusCountTime: 64, lastBusTime: "13:05", hour, mixLabel, minute, printsec, busType: 2)
-            
+            if hour == 13 && minute < 5 {
+                mixLabel = lastBus((5 - minute), "13:05", printsec)
+            } else if hour == 13 {
+                break
+            } else {
+                mixLabel = weekAndWedCalclation(notInServiceHour: 14, lastBusHour: 12, lastBusCountTime: 64, lastBusTime: "13:05", hour, mixLabel, minute, printsec, busType: 2)
+            }
         default:
             if hour == 8 {
                 mixLabel = circulation(time: "08:00~09:05", min: "2~5")

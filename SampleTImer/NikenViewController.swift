@@ -58,7 +58,7 @@ class NikenViewController: BusTimerViewController {
             break
             
         case BusSelect.Wed.rawValue:
-            if  ((20 == hour && minute >= 30) || (7 == hour && minute < 20) || (6 > hour) || (21 <= hour)) {
+            if  ((20 == hour && minute >= 30) || (7 == hour && minute < 20) || (6 >= hour) || (21 <= hour)) {
                 break
             } else if ((hour == 7 && minute >= 20) || (hour == 8 && minute < 20)) {
                 if hour == 7 {
@@ -90,7 +90,7 @@ class NikenViewController: BusTimerViewController {
             }
     
         default:
-            if ((20 == hour && minute >= 30) || (7 == hour && minute < 20) || (6 > hour) || (20 < hour)) {
+            if ((20 == hour && minute >= 30) || (7 == hour && minute < 20) || (6 >= hour) || (20 < hour)) {
                 break
             } else if ((hour == 7 && minute >= 20) || (hour == 8 && minute < 20)) {
                 if hour == 7 {

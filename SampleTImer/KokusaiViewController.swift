@@ -24,11 +24,15 @@ class KokusaiViewController: BusTimerViewController {
             let busTimeCategories = TimeTable.getTime(hour: hour, minute: minute, busType: busType)
             let arrayTime = busTimeCategories.times
             let arrayNextTime = busTimeCategories.nextTimes
-        
+            
             if arrayTime.count == busTimeCategories.count {
                 
                 if hour == 22 && minute >= 20 {
-                    mixLabel = lastBus((60 - (minute + 1) + 2), "23:02", printsec)
+                    mixLabel = lastBus((59 - (minute + 2)), "23:02", printsec)
+                } else if hour == 21 && minute >= 50 {
+                    let busTimeAfterNextArrayIsNil = TimeTable.getTime(hour: hour + 1, minute: minute, busType: busType)
+                    mixLabel = makeLabel(hour + 1, hour + 2, busTimeAfterNextArrayIsNil.times[0], busTimeAfterNextArrayIsNil.nextTimes[0], ((59 - minute) + busTimeAfterNextArrayIsNil.times[0]), printsec)
+                    
                 } else {
                     mixLabel = makeLabel(hour + 1, hour + 1, arrayNextTime[0], arrayNextTime[1], ((59 - minute) + arrayNextTime[0]), printsec)
                 }

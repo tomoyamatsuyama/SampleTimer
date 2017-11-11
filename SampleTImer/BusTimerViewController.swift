@@ -34,8 +34,8 @@ extension UIColor {
 }
 
 struct BusLabels {
-    var nextTimeText: String = "ただいまの時間は\n運行しておりません"
-    var countTimeText: String = ""
+    var nextTimeText: String = ""
+    var countTimeText: String = "ただいまの時間は\n運行しておりません"
     var AfterTheNextTimeLabelText: String = ""
     var AfterTheNextTimeText: String = ""
 }
@@ -99,7 +99,7 @@ class BusTimerViewController: UIViewController {
     
     func lastBus(_ countmin: Int, _ time: String, _ printsec: Int) -> BusLabels{
         countTime = labelCountdown(countmin, printsec)
-        nextTime = "最終バス\n\(time)発 到着まで"
+        nextTime = "最終\n\(time)発 到着まで"
         AfterTheNextTimeLabel = " "
         AfterTheNextTime = " "
         return BusLabels(nextTimeText: nextTime, countTimeText: countTime, AfterTheNextTimeLabelText: AfterTheNextTimeLabel, AfterTheNextTimeText: AfterTheNextTime)
@@ -107,7 +107,7 @@ class BusTimerViewController: UIViewController {
     
     func nikenCirculation(_ countmin: Int, time: String, _ printsec: Int, nextTimeTable: String) -> BusLabels {
         countTime = labelCountdown(countmin, printsec)
-        nextTime = "次の\(time)発 到着まで"
+        nextTime = "\(time)発 到着まで"
         AfterTheNextTimeLabel = "次\(nextTimeTable)は"
         AfterTheNextTime = "約5~10分おきに\n運行します"
         
@@ -116,10 +116,15 @@ class BusTimerViewController: UIViewController {
     }
     
     func labelFontSet(_ countTimeLabel: UILabel) -> UILabel {
-        let attrLabel = NSMutableAttributedString(string: countTimeLabel.text!)
-        attrLabel.addAttribute(NSAttributedStringKey.font, value: UIFont.systemFont(ofSize: 65), range: NSMakeRange(0, 2))
-        attrLabel.addAttribute(NSAttributedStringKey.font, value: UIFont.systemFont(ofSize: 65), range: NSMakeRange(3, 2))
-        countTimeLabel.attributedText = attrLabel
-        return countTimeLabel
+        if countTimeLabel.text == "ただいまの時間は\n運行しておりません" {
+            countTimeLabel.numberOfLines = 0
+            return countTimeLabel
+        } else {
+            let attrLabel = NSMutableAttributedString(string: countTimeLabel.text!)
+            attrLabel.addAttribute(NSAttributedStringKey.font, value: UIFont.systemFont(ofSize: 65), range: NSMakeRange(0, 2))
+            attrLabel.addAttribute(NSAttributedStringKey.font, value: UIFont.systemFont(ofSize: 65), range: NSMakeRange(3, 2))
+            countTimeLabel.attributedText = attrLabel
+            return countTimeLabel
+        }
     }
 }

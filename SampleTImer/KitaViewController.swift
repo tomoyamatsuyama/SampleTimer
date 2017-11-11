@@ -16,25 +16,21 @@ class KitaViewController: BusTimerViewController{
     @IBOutlet private weak var kitaAfterTheNextLabel: UILabel!
     @IBOutlet private weak var kitaAfterTheNextTime: UILabel!
     
-    private func busTimeCalc(notInServiceHour: Int = 21, notInServiceMinute: Int = 25, lastBusMinute: Int = 5, lastBusTime: String = "22:05", _ hour: Int, _ minute: Int, _ inputMixLabel: BusLabels, _ printsec: Int, busType: Int) -> BusLabels{
+    private func busTimeCalc(lastBusMinute: Int = 5, lastBusTime: String = "22:05", _ hour: Int, _ minute: Int, _ inputMixLabel: BusLabels, _ printsec: Int, busType: Int) -> BusLabels{
         var mixLabel = inputMixLabel
-        if ((22 == hour && minute >= 22) || (5 >= hour) || (notInServiceHour <= hour )) {
+        if ((22 == hour && minute >= 22) || (5 >= hour) || (23 <= hour )) {
             return mixLabel
         } else {
             let busTimeCategories = TimeTable.getTime(hour: hour, minute: minute, busType: busType)
             let arrayTime = busTimeCategories.times
             let arrayNextTime = busTimeCategories.nextTimes
-            
             if arrayTime.count == busTimeCategories.count {
-                
-                if hour == 21 && minute >= notInServiceMinute {
+                if hour == 21 && minute >= 42 {
                     mixLabel = lastBus(lastBusMinute + (59 - minute) , lastBusTime, printsec)
-                    
                 } else {
                     mixLabel = makeLabel(hour + 1, hour + 1, arrayNextTime[0], arrayNextTime[1], ((59 - minute) + arrayNextTime[0]), printsec)
                 }
             } else if arrayTime.count == busTimeCategories.count + 1 {
-                
                 if hour == 22 {
                     mixLabel = lastBus(lastBusMinute - (minute + 1), lastBusTime, printsec)
                     
@@ -45,6 +41,18 @@ class KitaViewController: BusTimerViewController{
                 mixLabel = makeLabel(hour, hour, arrayTime[busTimeCategories.count], arrayTime[busTimeCategories.count + 1], arrayTime[busTimeCategories.count] - (minute + 1), printsec)
                 
             }
+        }
+        return mixLabel
+    }
+    
+    func nextArrayisNil(_ hour: Int, _ minute: Int, _ printsec: Int) -> BusLabels {
+        var mixLabel: BusLabels = BusLabels()
+        
+        if hour == 18 && minute >= 50 || hour == 20 && minute >= 47{
+            let busTimeAfterNextArrayIsNil = TimeTable.getTime(hour: hour + 1, minute: minute, busType: 7)
+            mixLabel = makeLabel(hour + 1, hour + 2, busTimeAfterNextArrayIsNil.times[0], busTimeAfterNextArrayIsNil.nextTimes[0], ((59 - minute) + busTimeAfterNextArrayIsNil.times[0]), printsec)
+        } else {
+            mixLabel = busTimeCalc(hour, minute, mixLabel, printsec, busType: 7)
         }
         return mixLabel
     }
@@ -66,13 +74,13 @@ class KitaViewController: BusTimerViewController{
         
         switch weekday {
         case BusSelect.Sun.rawValue:
-            mixLabel = busTimeCalc(hour, minute, mixLabel, printsec, busType: 7)
+            mixLabel = nextArrayisNil(hour, minute, printsec)
             
         case BusSelect.Sat.rawValue:
-            mixLabel = busTimeCalc(hour, minute, mixLabel, printsec, busType: 7)
+            mixLabel = nextArrayisNil(hour, minute, printsec)
             
         default:
-            mixLabel = busTimeCalc(notInServiceHour: 23, notInServiceMinute: 42, lastBusMinute: 22, lastBusTime: "22:22", hour, minute, mixLabel, printsec, busType: 6)
+            mixLabel = busTimeCalc(lastBusMinute: 22, lastBusTime: "22:22", hour, minute, mixLabel, printsec, busType: 6)
         }
         
         self.kitaNextTimeLabel?.text = mixLabel.nextTimeText
