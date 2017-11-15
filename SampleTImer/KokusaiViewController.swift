@@ -32,16 +32,15 @@ class KokusaiViewController: BusTimerViewController {
                 } else if hour == 21 && minute >= 50 {
                     let busTimeAfterNextArrayIsNil = TimeTable.getTime(hour: hour + 1, minute: minute, busType: busType)
                     mixLabel = makeLabel(hour + 1, hour + 2, busTimeAfterNextArrayIsNil.times[0], busTimeAfterNextArrayIsNil.nextTimes[0], ((59 - minute) + busTimeAfterNextArrayIsNil.times[0]), printsec)
-                    
                 } else {
-                    mixLabel = makeLabel(hour + 1, hour + 1, arrayNextTime[0], arrayNextTime[1], ((59 - minute) + arrayNextTime[0]), printsec)
+                    mixLabel = makeLabel(hour + 1, hour + 1, arrayNextTime[0], arrayNextTime[1], arrayNextTime[0] - (minute + 1), printsec)
                 }
             } else if arrayTime.count == busTimeCategories.count + 1 {
                 
                 if hour == 23 {
                     mixLabel = lastBus(02 - (minute + 1), "23:02", printsec)
                 } else {
-                    mixLabel = makeLabel(hour, hour + 1, arrayTime[busTimeCategories.count], arrayNextTime[0], 59 - arrayTime[busTimeCategories.count], printsec)
+                    mixLabel = makeLabel(hour, hour + 1, arrayTime[busTimeCategories.count], arrayNextTime[0], arrayTime[busTimeCategories.count] - (minute + 1), printsec)
                 }
             } else {
                 mixLabel = makeLabel(hour, hour, arrayTime[busTimeCategories.count], arrayTime[busTimeCategories.count + 1], arrayTime[busTimeCategories.count] - (minute + 1), printsec)
@@ -86,8 +85,9 @@ class KokusaiViewController: BusTimerViewController {
     }
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         self.view.backgroundColor = UIColor.colorWithHexString("53B176")
-        Timer.scheduledTimer(withTimeInterval: 0.9, repeats: true) {_ in
+        Timer.scheduledTimer(withTimeInterval: 0.7, repeats: true) { [unowned self] _ in
             self.initialize()
         }
     }

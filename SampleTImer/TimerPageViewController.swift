@@ -32,18 +32,20 @@ class TimerPageViewController: UIPageViewController {
         }
     }
     
-    func navigationSet(index: Int){
-        switch index {
-        case BusName.kamigamo.index:
-            self.navigationItem.title = "上賀茂神社行き"
-        case BusName.niken.index:
-            self.navigationItem.title = "二軒茶屋行き"
-        case BusName.kita.index:
-            self.navigationItem.title = "北大路BT行き"
-        case BusName.kokusai.index:
-            self.navigationItem.title = "国際会館行き"
-        default:
-            self.navigationItem.title = "上賀茂神社行き"
+    var currentIndex: Int = 0{
+        willSet {
+            switch newValue {
+            case BusName.kamigamo.index:
+                self.navigationItem.title = "上賀茂神社行き"
+            case BusName.niken.index:
+                self.navigationItem.title = "二軒茶屋行き"
+            case BusName.kita.index:
+                self.navigationItem.title = "北大路BT行き"
+            case BusName.kokusai.index:
+                self.navigationItem.title = "国際会館行き"
+            default:
+                self.navigationItem.title = "上賀茂神社行き"
+            }
         }
     }
     
@@ -62,23 +64,17 @@ class TimerPageViewController: UIPageViewController {
 
 extension TimerPageViewController: UIPageViewControllerDataSource{
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        if let index = viewControllersList.index(of: viewController){
-            if index > 0 {
-                navigationSet(index: index)
-                return viewControllersList[index - 1]
-            }
-            navigationSet(index: index)
+        currentIndex = viewControllersList.index(of: viewController)!
+        if currentIndex > 0 {
+            return viewControllersList[currentIndex - 1]
         }
         return nil
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        if let index = viewControllersList.index(of: viewController){
-            if index < viewControllersList.count - 1 {
-                navigationSet(index: index)
-                return viewControllersList[index + 1]
-            }
-            navigationSet(index: index)
+        currentIndex = viewControllersList.index(of: viewController)!
+        if currentIndex < viewControllersList.count - 1 {
+            return viewControllersList[currentIndex + 1]
         }
         return nil
     }

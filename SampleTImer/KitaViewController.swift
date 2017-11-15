@@ -45,7 +45,7 @@ class KitaViewController: BusTimerViewController{
         return mixLabel
     }
     
-    func nextArrayisNil(_ hour: Int, _ minute: Int, _ printsec: Int) -> BusLabels {
+    func nextArrayIsNil(_ hour: Int, _ minute: Int, _ printsec: Int) -> BusLabels {
         var mixLabel: BusLabels = BusLabels()
         
         if hour == 18 && minute >= 50 || hour == 20 && minute >= 47{
@@ -74,10 +74,10 @@ class KitaViewController: BusTimerViewController{
         
         switch weekday {
         case BusSelect.Sun.rawValue:
-            mixLabel = nextArrayisNil(hour, minute, printsec)
+            mixLabel = nextArrayIsNil(hour, minute, printsec)
             
         case BusSelect.Sat.rawValue:
-            mixLabel = nextArrayisNil(hour, minute, printsec)
+            mixLabel = nextArrayIsNil(hour, minute, printsec)
             
         default:
             mixLabel = busTimeCalc(lastBusMinute: 22, lastBusTime: "22:22", hour, minute, mixLabel, printsec, busType: 6)
@@ -93,8 +93,9 @@ class KitaViewController: BusTimerViewController{
     }
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         self.view.backgroundColor = UIColor.colorWithHexString("53B176")
-        Timer.scheduledTimer(withTimeInterval: 0.9, repeats: true) {_ in
+        Timer.scheduledTimer(withTimeInterval: 0.7, repeats: true) { [unowned self] _ in
             self.initialize()
         }
     }

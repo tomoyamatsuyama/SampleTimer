@@ -48,9 +48,10 @@ class BusTimerViewController: UIViewController {
     
     func circulation(time: String, min: String) -> BusLabels {
         nextTime = "\(time)は\n約\(min)分おきに\n運行しています"
-        countTime = ""
-        AfterTheNextTimeLabel = ""
-        AfterTheNextTime = ""
+        countTime = " "
+        AfterTheNextTimeLabel = " "
+        AfterTheNextTime = " "
+        print(BusLabels(nextTimeText: nextTime, countTimeText: countTime, AfterTheNextTimeLabelText: AfterTheNextTimeLabel, AfterTheNextTimeText: AfterTheNextTime))
         return BusLabels(nextTimeText: nextTime, countTimeText: countTime, AfterTheNextTimeLabelText: AfterTheNextTimeLabel, AfterTheNextTimeText: AfterTheNextTime)
     }
     
@@ -76,15 +77,15 @@ class BusTimerViewController: UIViewController {
         countTime = labelCountdown(countmin, printsec)
         if printhour < 10 {
             if printNextMin < 10 {
-                nextTime = "\(printhour):0\(printNextMin)発 到着まで"
+                nextTime = "\(printhour):0\(printNextMin)発まで"
             } else {
-                nextTime = "\(printhour):\(printNextMin)発 到着まで"
+                nextTime = "\(printhour):\(printNextMin)発まで"
             }
         } else {
             if printNextMin < 10 {
-                nextTime = "\(printhour):0\(printNextMin)発 到着まで"
+                nextTime = "\(printhour):0\(printNextMin)発まで"
             } else {
-                nextTime = "\(printhour):\(printNextMin)発 到着まで"
+                nextTime = "\(printhour):\(printNextMin)発まで"
             }
         }
         AfterTheNextTimeLabel = "その次のバスは"
@@ -99,7 +100,7 @@ class BusTimerViewController: UIViewController {
     
     func lastBus(_ countmin: Int, _ time: String, _ printsec: Int) -> BusLabels{
         countTime = labelCountdown(countmin, printsec)
-        nextTime = "最終\n\(time)発 到着まで"
+        nextTime = "最終\n\(time)発まで"
         AfterTheNextTimeLabel = " "
         AfterTheNextTime = " "
         return BusLabels(nextTimeText: nextTime, countTimeText: countTime, AfterTheNextTimeLabelText: AfterTheNextTimeLabel, AfterTheNextTimeText: AfterTheNextTime)
@@ -107,7 +108,7 @@ class BusTimerViewController: UIViewController {
     
     func nikenCirculation(_ countmin: Int, time: String, _ printsec: Int, nextTimeTable: String) -> BusLabels {
         countTime = labelCountdown(countmin, printsec)
-        nextTime = "\(time)発 到着まで"
+        nextTime = "\(time)発まで"
         AfterTheNextTimeLabel = "次\(nextTimeTable)は"
         AfterTheNextTime = "約5~10分おきに\n運行します"
         

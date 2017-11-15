@@ -94,13 +94,13 @@ class NikenViewController: BusTimerViewController {
                 break
             } else if ((hour == 7 && minute >= 20) || (hour == 8 && minute < 20)) {
                 if hour == 7 {
-                    countmin = (60 - (minute + 1)) + 20
+                    countmin = 59 - minute + 20
                 } else {
                     countmin = 20 - (minute + 1)
                 }
                 mixLabel = nikenCirculation(countmin, time: "8:20", printsec, nextTimeTable: "08:20~09:25")
             } else if ((hour == 8 && minute >= 20) || (hour == 9 && minute < 25)) {
-                mixLabel = circulation(time: "08:00~09:25", min: "5~10")
+                mixLabel = circulation(time: "08:20~09:25", min: "5~10")
             } else if ((hour == 9 && minute >= 55) || (hour == 10 && minute < 5)) {
                 if minute < 05 {
                     countmin = 05 - (minute + 1)
@@ -108,7 +108,7 @@ class NikenViewController: BusTimerViewController {
                     countmin = 05 + (59 - minute)
                 }
                 mixLabel = nikenCirculation(countmin, time: "10:05", printsec, nextTimeTable: "10:05~10:55")
-            } else if (hour == 10 && (5 <= minute  && minute < 55)) {
+            } else if (hour == 10 && (5 <= minute && minute < 55)) {
                 mixLabel = circulation(time: "10:05~10:55", min: "5~10")
             } else if (hour == 14 && (minute >= 40 && minute < 50)) {
                 countmin = 50 - (minute + 1)
@@ -135,8 +135,9 @@ class NikenViewController: BusTimerViewController {
     }
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         self.view.backgroundColor = UIColor.colorWithHexString("53B176")
-        Timer.scheduledTimer(withTimeInterval: 0.9, repeats: true) {_ in
+        Timer.scheduledTimer(withTimeInterval: 0.7, repeats: true) { [unowned self] _ in
             self.initialize()
         }
     }

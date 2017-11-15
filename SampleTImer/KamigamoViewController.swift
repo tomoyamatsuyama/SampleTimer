@@ -16,7 +16,7 @@ class KamigamoViewController: BusTimerViewController {
     @IBOutlet private weak var KamigamoAfterTheNextLabel: UILabel!
     @IBOutlet private weak var KamigamoAfterTheNextTime: UILabel!
     
-    private func weekAndWedCalclation(notInServiceHour: Int = 21, lastBusHour: Int = 20, lastBusCountTime: Int = 59, lastBusTime: String = "21:00", _ hour: Int, _ inputMixLabel: BusLabels, _ minute: Int, _ printsec: Int, busType: Int) -> BusLabels {
+    private func weekAndWedCalclation(notInServiceHour: Int, lastBusHour: Int, lastBusCountTime: Int, lastBusTime: String, _ hour: Int, _ inputMixLabel: BusLabels, _ minute: Int, _ printsec: Int, busType: Int) -> BusLabels {
         
         var mixLabel = inputMixLabel
         if notInServiceHour <= hour || 7 >= hour {
@@ -66,7 +66,7 @@ class KamigamoViewController: BusTimerViewController {
             if hour == 8 {
                 mixLabel = circulation(time: "08:00~09:05", min: "2~5")
             } else {
-                mixLabel = weekAndWedCalclation(hour, mixLabel, minute, printsec, busType: 1)
+                mixLabel = weekAndWedCalclation(notInServiceHour: 21, lastBusHour: 20, lastBusCountTime: 59, lastBusTime: "21:00", hour, mixLabel, minute, printsec, busType: 1)
             }
 
         case BusSelect.Sat.rawValue:
@@ -81,9 +81,10 @@ class KamigamoViewController: BusTimerViewController {
             if hour == 8 {
                 mixLabel = circulation(time: "08:00~09:05", min: "2~5")
             } else {
-                mixLabel = weekAndWedCalclation(hour, mixLabel, minute, printsec, busType: 0)
+                mixLabel = weekAndWedCalclation(notInServiceHour: 21, lastBusHour: 20, lastBusCountTime: 59, lastBusTime: "21:00", hour, mixLabel, minute, printsec, busType: 0)
             }
         }
+        
         self.kamigamoNextTimeLabel?.text = mixLabel.nextTimeText
         self.kamigamoNextTimeLabel?.numberOfLines = 0
         self.KamigamoCountTime?.text = mixLabel.countTimeText
@@ -95,7 +96,7 @@ class KamigamoViewController: BusTimerViewController {
     
     override func viewDidLoad() {
         self.view.backgroundColor = UIColor.colorWithHexString("53B176")
-        Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) {_ in
+        Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { [unowned self] _ in
             self.initialize()
         }
     }
