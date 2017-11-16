@@ -58,7 +58,7 @@ class NikenViewController: BusTimerViewController {
             break
             
         case BusSelect.Wed.rawValue:
-            if  ((20 == hour && minute >= 30) || (7 == hour && minute < 20) || (6 >= hour) || (21 <= hour)) {
+            if  ((20 == hour && minute >= 30) || (7 == hour && minute < 20) || (hour <= 6) || (21 <= hour)) {
                 break
             } else if ((hour == 7 && minute >= 20) || (hour == 8 && minute < 20)) {
                 if hour == 7 {
@@ -92,6 +92,7 @@ class NikenViewController: BusTimerViewController {
         default:
             if ((20 == hour && minute >= 30) || (7 == hour && minute < 20) || (6 >= hour) || (20 < hour)) {
                 break
+                
             } else if ((hour == 7 && minute >= 20) || (hour == 8 && minute < 20)) {
                 if hour == 7 {
                     countmin = 59 - minute + 20
@@ -99,8 +100,10 @@ class NikenViewController: BusTimerViewController {
                     countmin = 20 - (minute + 1)
                 }
                 mixLabel = nikenCirculation(countmin, time: "8:20", printsec, nextTimeTable: "08:20~09:25")
+                
             } else if ((hour == 8 && minute >= 20) || (hour == 9 && minute < 25)) {
                 mixLabel = circulation(time: "08:20~09:25", min: "5~10")
+                
             } else if ((hour == 9 && minute >= 55) || (hour == 10 && minute < 5)) {
                 if minute < 05 {
                     countmin = 05 - (minute + 1)
@@ -108,18 +111,24 @@ class NikenViewController: BusTimerViewController {
                     countmin = 05 + (59 - minute)
                 }
                 mixLabel = nikenCirculation(countmin, time: "10:05", printsec, nextTimeTable: "10:05~10:55")
+                
             } else if (hour == 10 && (5 <= minute && minute < 55)) {
                 mixLabel = circulation(time: "10:05~10:55", min: "5~10")
+                
             } else if (hour == 14 && (minute >= 40 && minute < 50)) {
                 countmin = 50 - (minute + 1)
                 mixLabel = nikenCirculation(countmin, time: "14:50", printsec, nextTimeTable: "14:50~15:10")
+                
             } else if ((hour == 14 && minute >= 50) || (hour == 15 && minute < 20)){
                 mixLabel = circulation(time: "14:50~15:10", min: "5~10")
+                
             } else if (hour == 16 && (minute >= 20 && minute < 30)) {
                 countmin = 30 - (minute + 1)
                 mixLabel = nikenCirculation(countmin, time: "16:30", printsec, nextTimeTable: "16:30~17:10")
+                
             } else if ((hour == 16 && minute >= 30) || (hour == 17 && minute < 10)) {
                 mixLabel = circulation(time: "16:30~17:10", min: "5~10")
+                
             } else {
                 mixLabel = weekAndWedCalclation(hour, mixLabel, minute, printsec, busType: 3)
             }

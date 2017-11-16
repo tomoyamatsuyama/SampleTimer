@@ -47,8 +47,8 @@ class BusTimerViewController: UIViewController {
     var AfterTheNextTime: String = ""
     
     func circulation(time: String, min: String) -> BusLabels {
-        nextTime = "\(time)は\n約\(min)分おきに\n運行しています"
-        countTime = " "
+        nextTime = " "
+        countTime = "\(time)は\n約\(min)分おきに\n運行しています"
         AfterTheNextTimeLabel = " "
         AfterTheNextTime = " "
         print(BusLabels(nextTimeText: nextTime, countTimeText: countTime, AfterTheNextTimeLabelText: AfterTheNextTimeLabel, AfterTheNextTimeText: AfterTheNextTime))
@@ -117,15 +117,18 @@ class BusTimerViewController: UIViewController {
     }
     
     func labelFontSet(_ countTimeLabel: UILabel) -> UILabel {
-        if countTimeLabel.text == "ただいまの時間は\n運行しておりません" {
-            countTimeLabel.numberOfLines = 0
-            return countTimeLabel
-        } else {
-            let attrLabel = NSMutableAttributedString(string: countTimeLabel.text!)
-            attrLabel.addAttribute(NSAttributedStringKey.font, value: UIFont.systemFont(ofSize: 65), range: NSMakeRange(0, 2))
-            attrLabel.addAttribute(NSAttributedStringKey.font, value: UIFont.systemFont(ofSize: 65), range: NSMakeRange(3, 2))
-            countTimeLabel.attributedText = attrLabel
-            return countTimeLabel
+        if let labelText = countTimeLabel.text {
+            if labelText == "ただいまの時間は\n運行しておりません" || labelText.contains("分おきに\n運行しています"){
+                countTimeLabel.numberOfLines = 0
+                return countTimeLabel
+            } else {
+                let attrLabel = NSMutableAttributedString(string: labelText)
+                attrLabel.addAttribute(NSAttributedStringKey.font, value: UIFont.systemFont(ofSize: 65), range: NSMakeRange(0, 2))
+                attrLabel.addAttribute(NSAttributedStringKey.font, value: UIFont.systemFont(ofSize: 65), range: NSMakeRange(3, 2))
+                countTimeLabel.attributedText = attrLabel
+                return countTimeLabel
+            }
         }
+        return countTimeLabel
     }
 }
