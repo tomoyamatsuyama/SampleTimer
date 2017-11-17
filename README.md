@@ -13,5 +13,6 @@ It supports buses to Kamigamo Shrine, Nikenchaya,  Kitaooji and Kokusaikaikan. A
 
 ## Demo
 
+![demo](https://github.com/tomoyamatsuyama/SampleTimer/blob/master/sampleTimerDemo.gif)
 
 
