@@ -72,6 +72,7 @@ extension TimerPageViewController: UIPageViewControllerDataSource{
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        
         currentIndex = viewControllersList.index(of: viewController)!
         if currentIndex < viewControllersList.count - 1 {
             return viewControllersList[currentIndex + 1]

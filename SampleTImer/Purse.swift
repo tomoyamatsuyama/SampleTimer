@@ -114,6 +114,7 @@ class Purse{
         let data = try! Data(contentsOf: URL(fileURLWithPath: path))
         let timeTable = try! JSONDecoder().decode(BusGroup.self, from: data)
         
+        
         enum BusType: Int{
             case kamigamoWeek = 0
             case kamigamoWed = 1

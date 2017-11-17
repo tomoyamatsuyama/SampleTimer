@@ -33,7 +33,8 @@ class KokusaiViewController: BusTimerViewController {
                     let busTimeAfterNextArrayIsNil = TimeTable.getTime(hour: hour + 1, minute: minute, busType: busType)
                     mixLabel = makeLabel(hour + 1, hour + 2, busTimeAfterNextArrayIsNil.times[0], busTimeAfterNextArrayIsNil.nextTimes[0], ((59 - minute) + busTimeAfterNextArrayIsNil.times[0]), printsec)
                 } else {
-                    mixLabel = makeLabel(hour + 1, hour + 1, arrayNextTime[0], arrayNextTime[1], arrayNextTime[0] - (minute + 1), printsec)
+                    mixLabel = makeLabel(hour + 1, hour + 1, arrayNextTime[0], arrayNextTime[1], 59 - minute + arrayNextTime[0], printsec)
+                    //エラー
                 }
             } else if arrayTime.count == busTimeCategories.count + 1 {
                 
