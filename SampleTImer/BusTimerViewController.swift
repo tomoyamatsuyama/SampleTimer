@@ -51,7 +51,6 @@ class BusTimerViewController: UIViewController {
         countTime = "\(time)は\n約\(min)分おきに\n運行しています"
         AfterTheNextTimeLabel = " "
         AfterTheNextTime = " "
-        print(BusLabels(nextTimeText: nextTime, countTimeText: countTime, AfterTheNextTimeLabelText: AfterTheNextTimeLabel, AfterTheNextTimeText: AfterTheNextTime))
         return BusLabels(nextTimeText: nextTime, countTimeText: countTime, AfterTheNextTimeLabelText: AfterTheNextTimeLabel, AfterTheNextTimeText: AfterTheNextTime)
     }
     

@@ -27,14 +27,13 @@ class KamigamoViewController: BusTimerViewController {
             let arrayNextTime = busTimeCategories.nextTimes
             
             if arrayTime.count == busTimeCategories.count {
-                
                 if hour == lastBusHour {
                     mixLabel = lastBus((lastBusCountTime - minute), lastBusTime, printsec)
                 } else {
                     mixLabel = makeLabel(hour + 1, hour + 1, arrayNextTime[0], arrayNextTime[1], ((59 - minute) + arrayNextTime[0]), printsec)
                 }
             } else if arrayTime.count == busTimeCategories.count + 1 {
-                mixLabel = makeLabel(hour, hour + 1, arrayTime[busTimeCategories.count], arrayNextTime[0], 59 - arrayTime[busTimeCategories.count], printsec)
+                mixLabel = makeLabel(hour, hour + 1, arrayTime[busTimeCategories.count], arrayNextTime[0], arrayTime[busTimeCategories.count] - (minute + 1), printsec)
             } else {
                 mixLabel = makeLabel(hour, hour, arrayTime[busTimeCategories.count], arrayTime[busTimeCategories.count + 1], arrayTime[busTimeCategories.count] - (minute + 1), printsec)
             }
